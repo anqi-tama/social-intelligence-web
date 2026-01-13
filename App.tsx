@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   Menu, 
@@ -62,6 +61,8 @@ interface Source {
 
 // --- Constants ---
 
+const LOGO_URL = "https://i.imgur.com/3BicB8f.png";
+
 const FEATURES = [
   { title: "AI Power Suggestion", desc: "Get smart recommendations for your next strategic move.", icon: <Sparkles className="w-6 h-6" /> },
   { title: "Sarcasm & Emotion Detection", desc: "Our AI understands irony and complex human emotions.", icon: <BrainCircuit className="w-6 h-6" /> },
@@ -106,9 +107,16 @@ const SOURCES_BOTTOM: Source[] = [
 const AnnouncementBar = () => (
   <div className="bg-gradient-to-r from-purple-700 to-indigo-900 text-white text-center py-2.5 px-4 text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-[70]">
     <div className="flex items-center justify-center gap-4">
-      <span className="bg-white/20 px-2 py-0.5 rounded-full text-[9px]">Case Study</span>
+      <span className="bg-white/20 px-2 py-0.5 rounded-full text-[9px] flex-shrink-0">Case Study</span>
       <span>Discover our latest Wardah Brand Growth Pivot analysis.</span>
-      <a href="https://imm-studycase.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/80 hidden sm:inline flex items-center gap-1">Read Now <ChevronRight className="w-3 h-3" /></a>
+      <a 
+        href="https://imm-studycase.vercel.app/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="underline hover:text-white/80 inline-flex items-center gap-1 whitespace-nowrap flex-shrink-0"
+      >
+        Read Now <ChevronRight className="w-3 h-3 flex-shrink-0" />
+      </a>
     </div>
   </div>
 );
@@ -167,6 +175,26 @@ const Breadcrumbs = ({ current }: { current: string }) => {
   );
 };
 
+// Moved outside and explicitly typed as React.FC to fix 'key' prop issue in JSX maps
+const SourceCard: React.FC<{ source: Source }> = ({ source }) => (
+  <a 
+    href={source.url} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="w-40 h-32 md:w-48 md:h-40 bg-[#121214] border border-[#1b1b1d] rounded-2xl flex flex-col items-center justify-center gap-4 mx-2 md:mx-4 shrink-0 transition-all hover:border-purple-500/50 hover:bg-[#18181b] hover:scale-105 active:scale-95 cursor-pointer group"
+  >
+    <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
+      <img 
+        src={source.icon} 
+        alt={source.name} 
+        className="w-full h-full object-contain filter brightness-125" 
+        loading="lazy"
+      />
+    </div>
+    <span className="text-[10px] md:text-xs font-bold text-[#6a6a6b] uppercase tracking-widest group-hover:text-white transition-colors text-center px-4">{source.name}</span>
+  </a>
+);
+
 // --- Main App ---
 
 const App: React.FC = () => {
@@ -190,25 +218,6 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const SourceCard = ({ source }: { source: Source }) => (
-    <a 
-      href={source.url} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="w-40 h-32 md:w-48 md:h-40 bg-[#121214] border border-[#1b1b1d] rounded-2xl flex flex-col items-center justify-center gap-4 mx-2 md:mx-4 shrink-0 transition-all hover:border-purple-500/50 hover:bg-[#18181b] hover:scale-105 active:scale-95 cursor-pointer group"
-    >
-      <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
-        <img 
-          src={source.icon} 
-          alt={source.name} 
-          className="w-full h-full object-contain filter brightness-125" 
-          loading="lazy"
-        />
-      </div>
-      <span className="text-[10px] md:text-xs font-bold text-[#6a6a6b] uppercase tracking-widest group-hover:text-white transition-colors text-center px-4">{source.name}</span>
-    </a>
-  );
-
   return (
     <div className="min-h-screen bg-[#070709] text-white selection:bg-purple-500 selection:text-white font-['Inter']">
       
@@ -218,8 +227,7 @@ const App: React.FC = () => {
         <nav className="w-full border-b border-[#1b1b1d] bg-[#070709]">
           <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div className="flex items-center gap-3 cursor-pointer group" onClick={() => navigateTo('home')}>
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center font-bold text-black text-xl group-hover:bg-purple-500 transition-colors">S</div>
-              <span className="font-heading font-bold text-xl uppercase tracking-tight group-hover:text-purple-400 transition-colors">Social Intelligence</span>
+              <img src={LOGO_URL} alt="Social Intelligence Logo" className="h-10 md:h-12 w-auto object-contain" />
             </div>
 
             <div className="hidden md:flex items-center gap-10">
@@ -240,7 +248,10 @@ const App: React.FC = () => {
       {/* Mobile Nav Overlay */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-[#070709] z-[100] p-12 flex flex-col gap-10 animate-in fade-in duration-300">
-          <div className="flex justify-between items-center"><div className="font-bold text-xl uppercase">Social Intelligence</div><button onClick={() => setIsMenuOpen(false)}><X className="w-8 h-8" /></button></div>
+          <div className="flex justify-between items-center">
+            <img src={LOGO_URL} alt="Social Intelligence Logo" className="h-10 w-auto object-contain cursor-pointer" onClick={() => navigateTo('home')} />
+            <button onClick={() => setIsMenuOpen(false)}><X className="w-8 h-8" /></button>
+          </div>
           <div className="flex flex-col gap-8 text-4xl font-black">
             <button onClick={() => navigateTo('home')}>Home</button>
             <button onClick={() => navigateTo('trends')}>Trends</button>
@@ -262,11 +273,8 @@ const App: React.FC = () => {
             </div>
             
             <div className="max-w-6xl mx-auto text-center space-y-12">
-              <div className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#a1a1a1]">
-                Wardah 2025 Growth Pivot: Movement + Glow Performance
-              </div>
-              <h1 className="text-6xl md:text-8xl font-black leading-tight tracking-tighter gradient-text">
-                Stay informed and get ahead <br/>of the conversation
+              <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tighter gradient-text">
+                Stay informed and get ahead of the conversation
               </h1>
               <div className="max-w-3xl mx-auto space-y-8">
                 <p className="text-xl text-[#6a6a6b] leading-relaxed">
@@ -283,7 +291,7 @@ const App: React.FC = () => {
           {/* --- Reputation Intelligence at Scale (Marquee sources) --- */}
           <section className="py-32 relative overflow-hidden border-t border-[#1b1b1d]">
             <div className="max-w-7xl mx-auto px-6 mb-24">
-              <h2 className="text-5xl md:text-7xl font-black text-center text-white tracking-tighter">Reputation Intelligence at Scale</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-center text-white tracking-tighter">Reputation Intelligence at Scale</h2>
             </div>
 
             {/* Central 25M+ Badge */}
@@ -325,23 +333,23 @@ const App: React.FC = () => {
                 </div>
                 
                 {/* Swipeable Case Card */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-72 overflow-hidden">
                   <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${currentCaseIndex === 0 ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
                     <div className="bg-[#161618] border border-[#252527] p-10 rounded-[2.5rem] h-full relative overflow-hidden group">
                        <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity"><TrendingUp className="w-32 h-32" /></div>
                        <h4 className="text-2xl font-bold text-white mb-4">UGM Case Example</h4>
-                       <p className="text-sm text-[#a1a1a1] leading-relaxed mb-6">How a leading educational institution optimized their public reputation by analyzing sentiment across student communities in real-time.</p>
+                       <p className="text-sm text-[#a1a1a1] leading-relaxed mb-8">How a leading educational institution optimized their public reputation by analyzing sentiment across student communities in real-time.</p>
                        <a 
                         href="https://imm-studycase.vercel.app/" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg"
+                        className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-purple-900/20"
                        >
                          READ NOW <ArrowUpRight className="w-4 h-4" />
                        </a>
                     </div>
                   </div>
-                  <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${currentCaseIndex === 1 ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+                  <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${currentCaseIndex === 1 ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
                     <div className="bg-[#161618] border border-purple-500/30 p-10 rounded-[2.5rem] h-full relative overflow-hidden group">
                        <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity"><Sparkles className="w-32 h-32" /></div>
                        <h4 className="text-2xl font-bold text-white mb-4">WARDAH Case Example</h4>
@@ -350,7 +358,7 @@ const App: React.FC = () => {
                         href="https://imm-studycase.vercel.app/" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all"
+                        className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-purple-900/20"
                        >
                          READ NOW <ArrowUpRight className="w-4 h-4" />
                        </a>
@@ -536,8 +544,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 mb-24">
           <div className="col-span-1 md:col-span-2 space-y-10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center font-bold text-black text-xl">S</div>
-              <span className="text-white font-bold text-xl uppercase tracking-tighter">Social Intelligence</span>
+               <img src={LOGO_URL} alt="Social Intelligence Logo" className="h-10 md:h-12 w-auto object-contain cursor-pointer" onClick={() => navigateTo('home')} />
             </div>
             <p className="text-[#6a6a6b] max-w-sm leading-relaxed">
               Leading the next generation of social listening. Based in Jakarta, empowering brands across South East Asia with high-fidelity sentiment analysis.
@@ -552,7 +559,7 @@ const App: React.FC = () => {
           <div className="space-y-6">
             <h5 className="text-white font-bold text-xs uppercase tracking-widest">Company</h5>
             <ul className="space-y-4 text-sm text-[#6a6a6b]">
-              <li className="hover:text-white cursor-pointer">About Us</li>
+              <li className="hover:text-white cursor-pointer" onClick={() => navigateTo('home')}>About Us</li>
               <li className="hover:text-white cursor-pointer">Case Studies</li>
               <li className="hover:text-white cursor-pointer">Careers</li>
               <li className="hover:text-white cursor-pointer" onClick={() => navigateTo('contact')}>Contact</li>
