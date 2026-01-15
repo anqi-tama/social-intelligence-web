@@ -273,7 +273,7 @@ const App: React.FC = () => {
             </div>
             
             <div className="max-w-6xl mx-auto text-center space-y-12">
-              <h1 className="text-5xl md:text-6xl font-black leading-tight tracking-tighter gradient-text">
+              <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tighter gradient-text">
                 Stay informed and get ahead of the conversation
               </h1>
               <div className="max-w-3xl mx-auto space-y-8">
@@ -291,7 +291,7 @@ const App: React.FC = () => {
           {/* --- Reputation Intelligence at Scale (Marquee sources) --- */}
           <section className="py-32 relative overflow-hidden border-t border-[#1b1b1d]">
             <div className="max-w-7xl mx-auto px-6 mb-24">
-              <h2 className="text-5xl md:text-6xl font-black text-center text-white tracking-tighter">Reputation Intelligence at Scale</h2>
+              <h2 className="text-5xl md:text-7xl font-black text-center text-white tracking-tighter">Reputation Intelligence at Scale</h2>
             </div>
 
             {/* Central 25M+ Badge */}
