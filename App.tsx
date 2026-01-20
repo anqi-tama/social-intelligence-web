@@ -4,51 +4,55 @@ import {
   X, 
   BarChart3, 
   Zap, 
-  CheckCircle2,
-  Mail,
-  MapPin,
-  Phone,
-  Target,
-  Sparkles,
-  UtensilsCrossed,
-  Check,
-  BrainCircuit,
-  Globe,
-  MessageSquare,
-  User,
-  Loader2,
-  Activity,
-  Plus,
-  Minus,
-  Radio,
-  Layers,
-  LineChart,
-  Command,
-  Coffee,
-  ChevronRight,
-  ChevronDown,
-  Instagram,
-  Twitter,
-  Linkedin,
-  ArrowUpRight,
-  ShieldCheck,
-  Search,
-  Users,
-  AlertCircle,
-  TrendingUp,
-  FileText,
-  PieChart,
-  Youtube,
-  Facebook,
-  Music2,
-  Tv,
-  HelpCircle,
-  Newspaper,
-  Cpu,
-  AlertTriangle,
-  Smile,
-  Map,
-  Database
+  CheckCircle2, 
+  Mail, 
+  MapPin, 
+  Phone, 
+  Target, 
+  Sparkles, 
+  UtensilsCrossed, 
+  Check, 
+  BrainCircuit, 
+  Globe, 
+  MessageSquare, 
+  User, 
+  Loader2, 
+  Activity, 
+  Plus, 
+  Minus, 
+  Radio, 
+  Layers, 
+  LineChart, 
+  Command, 
+  Coffee, 
+  ChevronRight, 
+  ChevronDown, 
+  Instagram, 
+  Twitter, 
+  Linkedin, 
+  ArrowUpRight, 
+  ShieldCheck, 
+  Search, 
+  Users, 
+  AlertCircle, 
+  TrendingUp, 
+  FileText, 
+  PieChart, 
+  Youtube as YoutubeIcon, 
+  Facebook, 
+  Music2, 
+  Tv, 
+  HelpCircle, 
+  Newspaper, 
+  Cpu, 
+  AlertTriangle, 
+  Smile, 
+  Map, 
+  Database, 
+  Flame, 
+  Award, 
+  Trophy, 
+  Info 
 } from 'lucide-react';
 
 // --- Types ---
@@ -61,7 +65,7 @@ interface Source {
 
 // --- Constants ---
 
-const LOGO_URL = "https://i.imgur.com/3BicB8f.png";
+const LOGO_URL = "https://i.imgur.com/TQs8vF0.png";
 
 const FEATURES = [
   { title: "AI Power Suggestion", desc: "Get smart recommendations for your next strategic move.", icon: <Sparkles className="w-6 h-6" /> },
@@ -79,7 +83,7 @@ const FAQS = [
   { q: "What Matric Do You Provide?", a: "We provide Share of Voice (SOV), Sentiment Analysis, Reach, Engagement Rate, and Topic Clustering metrics." },
   { q: "Does Social Intelligence Collect Historical Data?", a: "Yes, we can fetch up to 12 months of historical data depending on your plan." },
   { q: "How Does It Works?", a: "We scan 25M+ sources in real-time, process them through our Gemini-powered AI, and deliver insights to your dashboard." },
-  { q: "How Accurate is Your Sentiment And Emotion Analyst?", a: "Our AI models achieve 92%+ accuracy, specifically tuned for sarcasm and local Indonesian slang." },
+  { q: "How Accuracy is Your Sentiment And Emotion Analyst?", a: "Our AI models achieve 92%+ accuracy, specifically tuned for sarcasm and local Indonesian slang." },
   { q: "Can I track competitor?", a: "Absolutely. You can set up side-by-side tracking for up to 50 competitors." },
   { q: "Is there a free trial?", a: "We offer a free Personalized Brand Analysis report during your initial demo call." }
 ];
@@ -87,7 +91,7 @@ const FAQS = [
 const SOURCES_TOP: Source[] = [
   { name: "Facebook", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/6949880fcf06b747a8c0ac36_X_Icon__2_-removebg-preview.png", url: "https://facebook.com" },
   { name: "Reddit", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694d553dfa59b3a516e0acd1_Untitled_design__13_-removebg-preview.png", url: "https://reddit.com" },
-  { name: "YouTube", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/6949cced6cb032028e4131a9_X_Icon__8_-removebg-preview.png", url: "https://youtube.com" },
+//  { name: "YouTube", icon: "https://s3-alpha.figma.com/hub/file/2729732820/69ab2bc1-7dda-4bf6-ac0b-adcb3e70b063-cover.png", url: "https://youtube.com" },
   { name: "TikTok", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694987e9e496d9d53a959d58_X_Icon__4_-removebg-preview.png", url: "https://tiktok.com" },
   { name: "Instagram", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/6949875f067dc35f082f2550_X_Icon__1_-removebg-preview%20(1).png", url: "https://instagram.com" },
   { name: "X", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694987a060ad1141f0ff3e1d_X_Icon__3_-removebg-preview.png", url: "https://x.com" },
@@ -97,7 +101,7 @@ const SOURCES_BOTTOM: Source[] = [
   { name: "LinkedIn", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694cde8991a13a0bfec26c88_Untitled_design__2_-removebg-preview-removebg-preview.png", url: "https://linkedin.com" },
   { name: "Kompas", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694d5184ab14320b4214ea65_Untitled_design__10_-removebg-preview.png", url: "https://kompas.com" },
   { name: "CNN", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694d53d198c9a634df22df28_Untitled_design__12_-removebg-preview.png", url: "https://cnn.com" },
-  { name: "Detik.com", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/6949cb90f54efb73bed56c5d_X_Icon__7_-removebg-preview.png", url: "https://detik.com" },
+ // { name: "Detik.com", icon: "https://awscdn.detik.net.id/detik2/images/default-169.gif", url: "https://detik.com" },
   { name: "CNBC", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694ce747655a37d8f6c4c256_Untitled_design__5_-removebg-preview.png", url: "https://cnbc.com" },
   { name: "Quora", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694d4e72a03268968c0a0492_Untitled_design__9_-removebg-preview.png", url: "https://quora.com" },
 ];
@@ -117,6 +121,146 @@ const AnnouncementBar = () => (
       >
         Read Now <ChevronRight className="w-3 h-3 flex-shrink-0" />
       </a>
+    </div>
+  </div>
+);
+
+const DashboardPreview = () => (
+  <div className="w-full max-w-6xl mx-auto p-6 md:p-8 bg-[#0c0c0e] rounded-3xl border border-[#1b1b1d] shadow-2xl overflow-hidden text-white font-sans">
+    {/* Top Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      {[
+        { label: "Social Mentions (Nov)", val: "30,450", sub: "Target: 28k–32k", badge: "On Track", badgeColor: "bg-emerald-500/10 text-emerald-400" },
+        { label: "Web Search Mentions", val: "1,900+", sub: "Potential SEO/SEM", badge: "Growing", badgeColor: "bg-indigo-500/10 text-indigo-400" },
+        { label: "Earned Media Value", val: "US$12.6M", sub: "Target: US$11.8M+", badge: "High Value", badgeColor: "bg-blue-500/10 text-blue-400" },
+        { label: "Sales Velocity (MoM)", val: "+28%", sub: "Driven by Sunscreen", badge: "Exceeded", badgeColor: "bg-emerald-500/10 text-emerald-400" },
+      ].map((card, i) => (
+        <div key={i} className="bg-[#161618] p-5 rounded-xl border border-[#252527] shadow-sm">
+          <div className="text-[11px] font-semibold text-gray-500 mb-2 uppercase tracking-tight">{card.label}</div>
+          <div className="text-3xl font-black mb-1">{card.val}</div>
+          <div className="flex items-center justify-between mt-4">
+            <span className="text-[10px] text-gray-500 font-medium">{card.sub}</span>
+            <span className={`text-[9px] font-black uppercase px-2 py-1 rounded-md ${card.badgeColor}`}>{card.badge}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Bottom Section */}
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {/* Chart Section */}
+      <div className="lg:col-span-2 bg-[#161618] p-6 rounded-2xl border border-[#252527] shadow-sm text-left">
+        <div className="flex items-center justify-between mb-8">
+          <h4 className="text-lg font-bold">Analysis Comparison</h4>
+          <Info className="w-4 h-4 text-gray-600" />
+        </div>
+        
+        <div className="grid grid-cols-3 gap-4 mb-10">
+          <div className="bg-emerald-500/5 p-4 rounded-xl border border-emerald-500/10 text-center">
+             <div className="text-xl font-black text-emerald-400">94%</div>
+             <div className="text-[9px] font-black text-emerald-400/80 uppercase tracking-widest mt-1">POS. SENTIMENT</div>
+          </div>
+          <div className="bg-indigo-500/5 p-4 rounded-xl border border-indigo-500/10 text-center">
+             <div className="text-xl font-black text-indigo-400">+10</div>
+             <div className="text-[9px] font-black text-indigo-400/80 uppercase tracking-widest mt-1">GROWTH PTS</div>
+          </div>
+          <div className="bg-rose-500/5 p-4 rounded-xl border border-rose-500/10 text-center">
+             <div className="text-[13px] font-black text-rose-400">"Sold Out Everywhere"</div>
+             <div className="text-[9px] font-black text-rose-400/80 uppercase tracking-widest mt-1">TOP CHALLENGE</div>
+          </div>
+        </div>
+
+        {/* Mock Chart */}
+        <div className="relative h-64 flex items-end justify-around border-b border-[#252527] pb-2">
+           {/* Y-axis labels */}
+           <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-[10px] text-gray-600 font-medium">
+             <span>28</span><span>21</span><span>14</span><span>7</span><span>0</span>
+           </div>
+           
+           <div className="flex flex-col items-center gap-2 group">
+              <div className="flex gap-1 items-end h-40">
+                <div className="w-10 bg-emerald-700/60 rounded-t-sm h-full shadow-sm"></div>
+                <div className="w-10 bg-emerald-500 rounded-t-sm h-[85%] shadow-sm"></div>
+              </div>
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-tight">Ramadan Baseline</span>
+           </div>
+
+           <div className="flex flex-col items-center gap-2">
+              <div className="flex gap-1 items-end h-56">
+                <div className="w-10 bg-emerald-700/60 rounded-t-sm h-[80%] shadow-sm"></div>
+                <div className="w-10 bg-emerald-500 rounded-t-sm h-full shadow-sm"></div>
+              </div>
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-tight">Nov Viral Pivot</span>
+           </div>
+        </div>
+        <div className="flex justify-center gap-6 mt-6">
+           <div className="flex items-center gap-2">
+             <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+             <span className="text-[10px] font-semibold text-emerald-500">Engagement Rate (%)</span>
+           </div>
+           <div className="flex items-center gap-2">
+             <div className="w-3 h-3 rounded-full bg-emerald-700"></div>
+             <span className="text-[10px] font-semibold text-emerald-700">Sales (IDR Billion)</span>
+           </div>
+        </div>
+      </div>
+
+      {/* Sidebar Section */}
+      <div className="space-y-6 text-left">
+        {/* Awards */}
+        <div className="bg-indigo-500/5 p-6 rounded-2xl border border-indigo-500/10">
+          <div className="flex items-center gap-2 mb-6">
+            <Trophy className="w-4 h-4 text-indigo-400" />
+            <h5 className="text-sm font-black text-indigo-400 uppercase tracking-tight">Awards & Recognition</h5>
+          </div>
+          <div className="space-y-4">
+            <div className="bg-[#161618] p-4 rounded-xl flex items-center gap-4 border border-[#252527] shadow-sm">
+               <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center text-amber-400"><Award className="w-5 h-5" /></div>
+               <div>
+                 <div className="text-xs font-black text-gray-200">MMA Smarties 2025</div>
+                 <div className="text-[10px] font-medium text-gray-500">Brand of the Year</div>
+               </div>
+            </div>
+            <div className="bg-[#161618] p-4 rounded-xl flex items-center gap-4 border border-[#252527] shadow-sm">
+               <div className="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400"><ShieldCheck className="w-5 h-5" /></div>
+               <div>
+                 <div className="text-xs font-black text-gray-200">Salaam Gateway</div>
+                 <div className="text-[10px] font-medium text-gray-500">Most Muslim-Friendly Brand</div>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Viral Snapshot */}
+        <div className="bg-[#161618] p-6 rounded-2xl border border-[#252527] shadow-sm">
+          <div className="flex items-center gap-2 mb-6">
+            <TrendingUp className="w-4 h-4 text-emerald-400" />
+            <h5 className="text-sm font-black text-gray-200 uppercase tracking-tight">Viral Snapshot</h5>
+          </div>
+          <div className="space-y-3">
+            <div className="p-4 rounded-xl border border-transparent flex items-center justify-between group hover:bg-[#1c1c1e] transition-colors">
+               <div className="flex items-center gap-3">
+                 <div className="text-lg">🔥</div>
+                 <div>
+                   <div className="text-[11px] font-black text-white">"SUNBLOCK BEDAK"</div>
+                   <div className="text-[9px] font-medium text-gray-500">TikTok: 3.2M+ Likes | 29% ER</div>
+                 </div>
+               </div>
+               <ChevronRight className="w-3 h-3 text-gray-700 group-hover:text-gray-500" />
+            </div>
+            <div className="p-4 rounded-xl border border-transparent flex items-center justify-between group hover:bg-[#1c1c1e] transition-colors">
+               <div className="flex items-center gap-3">
+                 <div className="text-lg">🎾</div>
+                 <div>
+                   <div className="text-[11px] font-black text-white">Padel Mastery Showdown</div>
+                   <div className="text-[9px] font-medium text-gray-500">IG Reels: 1.2M+ Views | 25% ER</div>
+                 </div>
+               </div>
+               <ChevronRight className="w-3 h-3 text-gray-700 group-hover:text-gray-500" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 );
@@ -167,15 +311,16 @@ const MegaMenu = ({ isOpen, onClose, navigateTo }: { isOpen: boolean; onClose: (
 const Breadcrumbs = ({ current }: { current: string }) => {
   const labels: Record<string, string> = { home: 'Home', trends: 'Industry Trends', contact: 'Contact' };
   return (
-    <div className="max-w-7xl mx-auto px-6 pt-36 pb-4 flex items-center gap-2 text-[9px] uppercase font-bold tracking-[0.2em] text-[#4a4a4b]">
-      <span className="hover:text-white cursor-pointer transition-colors" onClick={() => window.location.reload()}>Social Intelligence</span>
-      <ChevronRight className="w-3 h-3" />
-      <span className="text-purple-500">{labels[current]}</span>
+    <div className="w-full bg-[#070709] border-b border-[#1b1b1d] relative z-40">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-2 text-[9px] uppercase font-bold tracking-[0.2em] text-[#4a4a4b]">
+        <span className="hover:text-white cursor-pointer transition-colors" onClick={() => window.location.reload()}>Social Intelligence</span>
+        <ChevronRight className="w-3 h-3" />
+        <span className="text-purple-500">{labels[current]}</span>
+      </div>
     </div>
   );
 };
 
-// Moved outside and explicitly typed as React.FC to fix 'key' prop issue in JSX maps
 const SourceCard: React.FC<{ source: Source }> = ({ source }) => (
   <a 
     href={source.url} 
@@ -187,15 +332,13 @@ const SourceCard: React.FC<{ source: Source }> = ({ source }) => (
       <img 
         src={source.icon} 
         alt={source.name} 
-        className="w-full h-full object-contain filter brightness-125" 
+        className="w-full h-full object-contain filter brightness-0 invert" 
         loading="lazy"
       />
     </div>
     <span className="text-[10px] md:text-xs font-bold text-[#6a6a6b] uppercase tracking-widest group-hover:text-white transition-colors text-center px-4">{source.name}</span>
   </a>
 );
-
-// --- Main App ---
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'trends' | 'contact'>('home');
@@ -221,7 +364,6 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#070709] text-white selection:bg-purple-500 selection:text-white font-['Inter']">
       
-      {/* --- Fixed Header Wrapper --- */}
       <header className="fixed top-0 left-0 w-full z-50 flex flex-col">
         <AnnouncementBar />
         <nav className="w-full border-b border-[#1b1b1d] bg-[#070709]">
@@ -245,7 +387,6 @@ const App: React.FC = () => {
         </nav>
       </header>
 
-      {/* Mobile Nav Overlay */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-[#070709] z-[100] p-12 flex flex-col gap-10 animate-in fade-in duration-300">
           <div className="flex justify-between items-center">
@@ -261,12 +402,13 @@ const App: React.FC = () => {
         </div>
       )}
 
-      {/* Breadcrumbs */}
+      {/* Spacer to push content below the fixed header (Announcement Bar + Nav) */}
+      <div className="h-[120px] md:h-[130px]" />
+
       <Breadcrumbs current={currentPage} />
 
       {currentPage === 'home' ? (
         <main className="animate-in fade-in duration-1000">
-          {/* --- Hero Section --- */}
           <section className="pt-16 pb-32 px-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
               <div className="w-full h-full bg-gradient-to-l from-purple-500/20 to-transparent"></div>
@@ -274,27 +416,32 @@ const App: React.FC = () => {
             
             <div className="max-w-6xl mx-auto text-center space-y-12">
               <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tighter gradient-text">
-                Stay informed and get ahead of the conversation
+                Stay informed and get ahead of the conversation and where it’s going
               </h1>
-              <div className="max-w-3xl mx-auto space-y-8">
+              <div className="max-w-5xl mx-auto space-y-8">
                 <p className="text-xl text-[#6a6a6b] leading-relaxed">
                   See every mention of your brand on TikTok, Instagram Stories, X, YouTube comments, Reddit, news and review sites — in one dashboard. No gaps, no sampling, no surprise overages.
                 </p>
+                
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                   <button onClick={() => navigateTo('contact')} className="w-full sm:w-auto px-12 py-5 bg-white text-black rounded-full font-black text-xs uppercase tracking-widest hover:scale-105 transition-transform">Book Demo</button>
                   <button onClick={() => navigateTo('contact')} className="w-full sm:w-auto px-12 py-5 border border-white/10 bg-white/5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all">Contact Us</button>
+                </div>
+
+                <DashboardPreview />
+
+                <div className="text-[10px] font-bold text-purple-400 uppercase tracking-[0.3em] mt-8">
+                  Wardah brand performance during November 2025
                 </div>
               </div>
             </div>
           </section>
 
-          {/* --- Reputation Intelligence at Scale (Marquee sources) --- */}
           <section className="py-32 relative overflow-hidden border-t border-[#1b1b1d]">
             <div className="max-w-7xl mx-auto px-6 mb-24">
               <h2 className="text-5xl md:text-7xl font-black text-center text-white tracking-tighter">Reputation Intelligence at Scale</h2>
             </div>
 
-            {/* Central 25M+ Badge */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-none">
               <div className="w-48 h-48 md:w-64 md:h-64 bg-black rounded-full border-4 border-purple-500/30 flex flex-col items-center justify-center shadow-[0_0_80px_rgba(168,85,247,0.3)] animate-pulse">
                 <span className="text-4xl md:text-6xl font-black text-white">25M+</span>
@@ -302,7 +449,6 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Marquee Rows */}
             <div className="space-y-6 md:space-y-10 relative opacity-40 hover:opacity-100 transition-opacity">
               <div className="mask-fade overflow-hidden">
                 <div className="animate-marquee py-2">
@@ -322,18 +468,16 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          {/* --- About / Access Customer Insight --- */}
           <section className="py-32 px-6 border-t border-[#1b1b1d]">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
               <div className="space-y-10">
-                <div className="space-y-4">
+                <div className="space-y-4 text-left">
                   <div className="text-purple-500 font-bold text-xs uppercase tracking-widest">About Section</div>
                   <h2 className="text-5xl font-black text-white">Access Customer Insight</h2>
                   <p className="text-lg text-[#6a6a6b] leading-relaxed">Learn from online conversations about your company. Get access to honest consumer feedback and understand why users choose you over competitors.</p>
                 </div>
                 
-                {/* Swipeable Case Card */}
-                <div className="relative h-72 overflow-hidden">
+                <div className="relative h-72 overflow-hidden text-left">
                   <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${currentCaseIndex === 0 ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
                     <div className="bg-[#161618] border border-[#252527] p-10 rounded-[2.5rem] h-full relative overflow-hidden group">
                        <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity"><TrendingUp className="w-32 h-32" /></div>
@@ -366,14 +510,13 @@ const App: React.FC = () => {
                   </div>
                 </div>
                 
-                {/* Swipe Indicators */}
                 <div className="flex gap-2 justify-center lg:justify-start">
                   <button onClick={() => setCurrentCaseIndex(0)} className={`w-8 h-1 rounded-full transition-all ${currentCaseIndex === 0 ? 'bg-purple-500' : 'bg-[#252527]'}`}></button>
                   <button onClick={() => setCurrentCaseIndex(1)} className={`w-8 h-1 rounded-full transition-all ${currentCaseIndex === 1 ? 'bg-purple-500' : 'bg-[#252527]'}`}></button>
                 </div>
               </div>
 
-              <div className="relative">
+              <div className="relative text-left">
                 <div className="absolute inset-0 bg-purple-600/20 blur-[120px] rounded-full"></div>
                 <div className="relative bg-[#0c0c0e] border border-white/5 p-12 rounded-[3rem] shadow-2xl">
                    <div className="flex items-center gap-3 mb-8">
@@ -400,14 +543,13 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          {/* --- Features Section --- */}
           <section className="py-32 px-6 border-t border-[#1b1b1d]">
             <div className="max-w-7xl mx-auto space-y-20">
               <div className="text-center space-y-4">
                 <h2 className="text-5xl font-black">Powerful Features</h2>
                 <p className="text-[#6a6a6b]">Full suite of reputation intelligence tools built for growth.</p>
               </div>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-3 gap-8 text-left">
                 {FEATURES.map((f, i) => (
                   <div key={i} className="p-10 bg-[#0c0c0e] border border-[#1b1b1d] rounded-3xl space-y-6 group hover:border-purple-500/50 transition-all hover:-translate-y-2">
                     <div className="w-12 h-12 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-purple-500">{f.icon}</div>
@@ -419,7 +561,6 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          {/* --- Benefits Section: Stats --- */}
           <section className="py-32 px-6 bg-gradient-to-b from-transparent to-[#0c0c0e]">
             <div className="max-w-7xl mx-auto">
               <div className="bg-white/5 border border-white/10 p-16 md:p-24 rounded-[4rem] text-center space-y-12 relative overflow-hidden">
@@ -445,13 +586,12 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          {/* --- FAQ Section --- */}
           <section className="py-32 px-6 border-t border-[#1b1b1d]">
             <div className="max-w-4xl mx-auto space-y-16">
               <h2 className="text-5xl font-black text-center">Frequently Asked Questions</h2>
               <div className="space-y-4">
                 {FAQS.map((faq, i) => (
-                  <div key={i} className="border-b border-[#1b1b1d]">
+                  <div key={i} className="border-b border-[#1b1b1d] text-left">
                     <button 
                       onClick={() => setActiveFaq(activeFaq === i ? null : i)}
                       className="w-full py-8 flex items-center justify-between text-left group"
@@ -472,10 +612,9 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          {/* --- CTA: Brand Analysis --- */}
           <section className="py-32 px-6">
             <div className="max-w-7xl mx-auto">
-              <div className="bg-purple-600 p-16 md:p-24 rounded-[4rem] flex flex-col lg:flex-row items-center justify-between gap-12 relative overflow-hidden">
+              <div className="bg-purple-600 p-16 md:p-24 rounded-[4rem] flex flex-col lg:flex-row items-center justify-between gap-12 relative overflow-hidden text-left">
                 <div className="absolute top-0 right-0 opacity-10"><BrainCircuit className="w-96 h-96" /></div>
                 <div className="space-y-6 z-10 text-center lg:text-left">
                   <h2 className="text-5xl md:text-6xl font-black text-white">Get Your Free <br/>Brand Analysis</h2>
@@ -496,7 +635,7 @@ const App: React.FC = () => {
                   <h1 className="text-6xl font-black">Social Listening Trend <br/>Across Industries</h1>
                   <p className="text-[#6a6a6b] max-w-2xl mx-auto">Explore the data that drives modern brand strategy in South East Asia.</p>
                </div>
-               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                   {["Retail", "F&B", "Automotive", "Banking", "Beauty", "Tech"].map(cat => (
                     <div key={cat} className="p-12 bg-[#0c0c0e] border border-[#1b1b1d] rounded-3xl group hover:border-purple-500 transition-colors">
                       <TrendingUp className="w-10 h-10 text-purple-500 mb-8" />
@@ -512,7 +651,7 @@ const App: React.FC = () => {
       ) : (
         <main className="animate-in fade-in duration-1000">
           <section className="pt-16 pb-32 px-6">
-            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24">
+            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 text-left">
               <div className="space-y-12">
                 <h1 className="text-7xl font-black">Contact Us.</h1>
                 <p className="text-xl text-[#6a6a6b]">Let's discuss how Social Intelligence can elevate your brand's data strategy.</p>
@@ -539,14 +678,13 @@ const App: React.FC = () => {
         </main>
       )}
 
-      {/* --- Footer --- */}
-      <footer className="bg-[#0c0c0e] border-t border-[#1b1b1d] pt-32 pb-16 px-6">
+      <footer className="bg-[#0c0c0e] border-t border-[#1b1b1d] pt-32 pb-16 px-6 text-left">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 mb-24">
           <div className="col-span-1 md:col-span-2 space-y-10">
             <div className="flex items-center gap-3">
                <img src={LOGO_URL} alt="Social Intelligence Logo" className="h-10 md:h-12 w-auto object-contain cursor-pointer" onClick={() => navigateTo('home')} />
             </div>
-            <p className="text-[#6a6a6b] max-w-sm leading-relaxed">
+            <p className="text-[#6a6a6b] max-sm leading-relaxed">
               Leading the next generation of social listening. Based in Jakarta, empowering brands across South East Asia with high-fidelity sentiment analysis.
             </p>
             <div className="flex items-center gap-8">
