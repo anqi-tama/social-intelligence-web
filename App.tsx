@@ -81,7 +81,7 @@ const FEATURES = [
 
 const FAQS = [
   { q: "What Matric Do You Provide?", a: "We provide Share of Voice (SOV), Sentiment Analysis, Reach, Engagement Rate, and Topic Clustering metrics." },
-  { q: "Does Social Intelligence Collect Historical Data?", a: "Yes, we can fetch up to 12 months of historical data depending on your plan." },
+  { q: "Does Readline Collect Historical Data?", a: "Yes, we can fetch up to 12 months of historical data depending on your plan." },
   { q: "How Does It Works?", a: "We scan 25M+ sources in real-time, process them through our Gemini-powered AI, and deliver insights to your dashboard." },
   { q: "How Accuracy is Your Sentiment And Emotion Analyst?", a: "Our AI models achieve 92%+ accuracy, specifically tuned for sarcasm and local Indonesian slang." },
   { q: "Can I track competitor?", a: "Absolutely. You can set up side-by-side tracking for up to 50 competitors." },
@@ -91,7 +91,7 @@ const FAQS = [
 const SOURCES_TOP: Source[] = [
   { name: "Facebook", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/6949880fcf06b747a8c0ac36_X_Icon__2_-removebg-preview.png", url: "https://facebook.com" },
   { name: "Reddit", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694d553dfa59b3a516e0acd1_Untitled_design__13_-removebg-preview.png", url: "https://reddit.com" },
-//  { name: "YouTube", icon: "https://s3-alpha.figma.com/hub/file/2729732820/69ab2bc1-7dda-4bf6-ac0b-adcb3e70b063-cover.png", url: "https://youtube.com" },
+ // { name: "YouTube", icon: "https://www.citypng.com/public/uploads/preview/hd-white-youtube-yt-logo-symbol-icon-png-704081694687174hznqiiqmti.png", url: "https://youtube.com" },
   { name: "TikTok", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694987e9e496d9d53a959d58_X_Icon__4_-removebg-preview.png", url: "https://tiktok.com" },
   { name: "Instagram", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/6949875f067dc35f082f2550_X_Icon__1_-removebg-preview%20(1).png", url: "https://instagram.com" },
   { name: "X", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694987a060ad1141f0ff3e1d_X_Icon__3_-removebg-preview.png", url: "https://x.com" },
@@ -101,7 +101,7 @@ const SOURCES_BOTTOM: Source[] = [
   { name: "LinkedIn", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694cde8991a13a0bfec26c88_Untitled_design__2_-removebg-preview-removebg-preview.png", url: "https://linkedin.com" },
   { name: "Kompas", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694d5184ab14320b4214ea65_Untitled_design__10_-removebg-preview.png", url: "https://kompas.com" },
   { name: "CNN", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694d53d198c9a634df22df28_Untitled_design__12_-removebg-preview.png", url: "https://cnn.com" },
- // { name: "Detik.com", icon: "https://awscdn.detik.net.id/detik2/images/default-169.gif", url: "https://detik.com" },
+ // { name: "Detik.com", icon: "https://e7.pngegg.com/pngimages/142/474/png-clipart-detikcom-news-advertising-indonesian-information-others-miscellaneous-service.png", url: "https://detik.com" },
   { name: "CNBC", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694ce747655a37d8f6c4c256_Untitled_design__5_-removebg-preview.png", url: "https://cnbc.com" },
   { name: "Quora", icon: "https://cdn.prod.website-files.com/693645fac59cc49511b119e3/694d4e72a03268968c0a0492_Untitled_design__9_-removebg-preview.png", url: "https://quora.com" },
 ];
@@ -109,7 +109,7 @@ const SOURCES_BOTTOM: Source[] = [
 // --- Sub-components ---
 
 const AnnouncementBar = () => (
-  <div className="bg-gradient-to-r from-purple-700 to-indigo-900 text-white text-center py-2.5 px-4 text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-[70]">
+  <div className="bg-gradient-to-r from-red-600 to-red-900 text-white text-center py-2.5 px-4 text-[10px] md:text-xs font-bold tracking-widest uppercase relative z-[70]">
     <div className="flex items-center justify-center gap-4">
       <span className="bg-white/20 px-2 py-0.5 rounded-full text-[9px] flex-shrink-0">Case Study</span>
       <span>Discover our latest Wardah Brand Growth Pivot analysis.</span>
@@ -131,7 +131,7 @@ const DashboardPreview = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
       {[
         { label: "Social Mentions (Nov)", val: "30,450", sub: "Target: 28k–32k", badge: "On Track", badgeColor: "bg-emerald-500/10 text-emerald-400" },
-        { label: "Web Search Mentions", val: "1,900+", sub: "Potential SEO/SEM", badge: "Growing", badgeColor: "bg-indigo-500/10 text-indigo-400" },
+        { label: "Web Search Mentions", val: "1,900+", sub: "Potential SEO/SEM", badge: "Growing", badgeColor: "bg-red-500/10 text-red-400" },
         { label: "Earned Media Value", val: "US$12.6M", sub: "Target: US$11.8M+", badge: "High Value", badgeColor: "bg-blue-500/10 text-blue-400" },
         { label: "Sales Velocity (MoM)", val: "+28%", sub: "Driven by Sunscreen", badge: "Exceeded", badgeColor: "bg-emerald-500/10 text-emerald-400" },
       ].map((card, i) => (
@@ -160,9 +160,9 @@ const DashboardPreview = () => (
              <div className="text-xl font-black text-emerald-400">94%</div>
              <div className="text-[9px] font-black text-emerald-400/80 uppercase tracking-widest mt-1">POS. SENTIMENT</div>
           </div>
-          <div className="bg-indigo-500/5 p-4 rounded-xl border border-indigo-500/10 text-center">
-             <div className="text-xl font-black text-indigo-400">+10</div>
-             <div className="text-[9px] font-black text-indigo-400/80 uppercase tracking-widest mt-1">GROWTH PTS</div>
+          <div className="bg-red-500/5 p-4 rounded-xl border border-red-500/10 text-center">
+             <div className="text-xl font-black text-red-400">+10</div>
+             <div className="text-[9px] font-black text-red-400/80 uppercase tracking-widest mt-1">GROWTH PTS</div>
           </div>
           <div className="bg-rose-500/5 p-4 rounded-xl border border-rose-500/10 text-center">
              <div className="text-[13px] font-black text-rose-400">"Sold Out Everywhere"</div>
@@ -187,20 +187,20 @@ const DashboardPreview = () => (
 
            <div className="flex flex-col items-center gap-2">
               <div className="flex gap-1 items-end h-56">
-                <div className="w-10 bg-emerald-700/60 rounded-t-sm h-[80%] shadow-sm"></div>
-                <div className="w-10 bg-emerald-500 rounded-t-sm h-full shadow-sm"></div>
+                <div className="w-10 bg-red-700/60 rounded-t-sm h-[80%] shadow-sm"></div>
+                <div className="w-10 bg-red-500 rounded-t-sm h-full shadow-sm"></div>
               </div>
               <span className="text-[10px] font-bold text-gray-500 uppercase tracking-tight">Nov Viral Pivot</span>
            </div>
         </div>
         <div className="flex justify-center gap-6 mt-6">
            <div className="flex items-center gap-2">
-             <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-             <span className="text-[10px] font-semibold text-emerald-500">Engagement Rate (%)</span>
+             <div className="w-3 h-3 rounded-full bg-red-500"></div>
+             <span className="text-[10px] font-semibold text-red-500">Engagement Rate (%)</span>
            </div>
            <div className="flex items-center gap-2">
-             <div className="w-3 h-3 rounded-full bg-emerald-700"></div>
-             <span className="text-[10px] font-semibold text-emerald-700">Sales (IDR Billion)</span>
+             <div className="w-3 h-3 rounded-full bg-red-700"></div>
+             <span className="text-[10px] font-semibold text-red-700">Sales (IDR Billion)</span>
            </div>
         </div>
       </div>
@@ -208,10 +208,10 @@ const DashboardPreview = () => (
       {/* Sidebar Section */}
       <div className="space-y-6 text-left">
         {/* Awards */}
-        <div className="bg-indigo-500/5 p-6 rounded-2xl border border-indigo-500/10">
+        <div className="bg-red-500/5 p-6 rounded-2xl border border-red-500/10">
           <div className="flex items-center gap-2 mb-6">
-            <Trophy className="w-4 h-4 text-indigo-400" />
-            <h5 className="text-sm font-black text-indigo-400 uppercase tracking-tight">Awards & Recognition</h5>
+            <Trophy className="w-4 h-4 text-red-400" />
+            <h5 className="text-sm font-black text-red-400 uppercase tracking-tight">Awards & Recognition</h5>
           </div>
           <div className="space-y-4">
             <div className="bg-[#161618] p-4 rounded-xl flex items-center gap-4 border border-[#252527] shadow-sm">
@@ -234,7 +234,7 @@ const DashboardPreview = () => (
         {/* Viral Snapshot */}
         <div className="bg-[#161618] p-6 rounded-2xl border border-[#252527] shadow-sm">
           <div className="flex items-center gap-2 mb-6">
-            <TrendingUp className="w-4 h-4 text-emerald-400" />
+            <TrendingUp className="w-4 h-4 text-red-400" />
             <h5 className="text-sm font-black text-gray-200 uppercase tracking-tight">Viral Snapshot</h5>
           </div>
           <div className="space-y-3">
@@ -273,17 +273,17 @@ const MegaMenu = ({ isOpen, onClose, navigateTo }: { isOpen: boolean; onClose: (
       onMouseLeave={onClose}
     >
       <div className="space-y-6">
-        <h4 className="text-purple-500 font-bold text-xs uppercase tracking-widest">Solutions</h4>
+        <h4 className="text-red-500 font-bold text-xs uppercase tracking-widest">Solutions</h4>
         <ul className="space-y-4">
           {["Brand Intelligence", "Crisis Management", "Competitor Tracking", "Market Research"].map(item => (
             <li key={item} className="group cursor-pointer">
-              <div className="text-white font-bold group-hover:text-purple-400 transition-colors flex items-center gap-2">{item} <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100" /></div>
+              <div className="text-white font-bold group-hover:text-red-400 transition-colors flex items-center gap-2">{item} <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100" /></div>
             </li>
           ))}
         </ul>
       </div>
       <div className="space-y-6">
-        <h4 className="text-purple-500 font-bold text-xs uppercase tracking-widest">Industry Trends</h4>
+        <h4 className="text-red-500 font-bold text-xs uppercase tracking-widest">Industry Trends</h4>
         <ul className="space-y-4">
           {["Retail & E-commerce", "Hospitality", "Healthcare", "Financial Services"].map(item => (
             <li key={item} className="text-[#a1a1a1] hover:text-white cursor-pointer text-sm transition-colors" onClick={() => navigateTo('trends')}>{item}</li>
@@ -291,18 +291,18 @@ const MegaMenu = ({ isOpen, onClose, navigateTo }: { isOpen: boolean; onClose: (
         </ul>
       </div>
       <div className="space-y-6">
-        <h4 className="text-purple-500 font-bold text-xs uppercase tracking-widest">Resources</h4>
+        <h4 className="text-red-500 font-bold text-xs uppercase tracking-widest">Resources</h4>
         <ul className="space-y-4">
-          {["Intelligence Reports", "Case Studies", "Blog", "Documentation"].map(item => (
+          {["Intelligence Reports", "Case Studies", "Documentation"].map(item => (
             <li key={item} className="text-[#a1a1a1] hover:text-white cursor-pointer text-sm transition-colors">{item}</li>
           ))}
         </ul>
       </div>
       <div className="bg-gradient-to-br from-[#161618] to-[#0c0c0e] p-8 rounded-3xl border border-[#252527] space-y-4">
-        <Sparkles className="text-purple-500 w-8 h-8" />
+        <Sparkles className="text-red-500 w-8 h-8" />
         <h4 className="text-white font-bold text-lg">Featured Insights</h4>
         <p className="text-[#6a6a6b] text-xs leading-relaxed">Wardah 2025 Growth Pivot: Movement + Glow Performance Analysis.</p>
-        <a href="https://imm-studycase.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-400 text-xs font-black uppercase flex items-center gap-2 hover:text-purple-300 transition-colors">READ CASE STUDY <ChevronRight className="w-3 h-3" /></a>
+        <a href="https://imm-studycase.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-red-400 text-xs font-black uppercase flex items-center gap-2 hover:text-red-300 transition-colors">READ CASE STUDY <ChevronRight className="w-3 h-3" /></a>
       </div>
     </div>
   );
@@ -313,9 +313,9 @@ const Breadcrumbs = ({ current }: { current: string }) => {
   return (
     <div className="w-full bg-[#070709] border-b border-[#1b1b1d] relative z-40">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-2 text-[9px] uppercase font-bold tracking-[0.2em] text-[#4a4a4b]">
-        <span className="hover:text-white cursor-pointer transition-colors" onClick={() => window.location.reload()}>Social Intelligence</span>
+        <span className="hover:text-white cursor-pointer transition-colors" onClick={() => window.location.reload()}>READLINE</span>
         <ChevronRight className="w-3 h-3" />
-        <span className="text-purple-500">{labels[current]}</span>
+        <span className="text-red-500">{labels[current]}</span>
       </div>
     </div>
   );
@@ -326,7 +326,7 @@ const SourceCard: React.FC<{ source: Source }> = ({ source }) => (
     href={source.url} 
     target="_blank" 
     rel="noopener noreferrer" 
-    className="w-40 h-32 md:w-48 md:h-40 bg-[#121214] border border-[#1b1b1d] rounded-2xl flex flex-col items-center justify-center gap-4 mx-2 md:mx-4 shrink-0 transition-all hover:border-purple-500/50 hover:bg-[#18181b] hover:scale-105 active:scale-95 cursor-pointer group"
+    className="w-40 h-32 md:w-48 md:h-40 bg-[#121214] border border-[#1b1b1d] rounded-2xl flex flex-col items-center justify-center gap-4 mx-2 md:mx-4 shrink-0 transition-all hover:border-red-500/50 hover:bg-[#18181b] hover:scale-105 active:scale-95 cursor-pointer group"
   >
     <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
       <img 
@@ -362,21 +362,21 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#070709] text-white selection:bg-purple-500 selection:text-white font-['Inter']">
+    <div className="min-h-screen bg-[#070709] text-white selection:bg-red-500 selection:text-white font-['Inter']">
       
       <header className="fixed top-0 left-0 w-full z-50 flex flex-col">
         <AnnouncementBar />
         <nav className="w-full border-b border-[#1b1b1d] bg-[#070709]">
           <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div className="flex items-center gap-3 cursor-pointer group" onClick={() => navigateTo('home')}>
-              <img src={LOGO_URL} alt="Social Intelligence Logo" className="h-10 md:h-12 w-auto object-contain" />
+              <img src={LOGO_URL} alt="READLINE Logo" className="h-10 md:h-12 w-auto object-contain" />
             </div>
 
             <div className="hidden md:flex items-center gap-10">
               <button onClick={() => navigateTo('home')} className={`text-xs font-bold uppercase tracking-widest ${currentPage === 'home' ? 'text-white' : 'text-[#6a6a6b] hover:text-white'}`}>Home</button>
               <button onMouseEnter={() => setIsMegaMenuOpen(true)} className={`text-xs font-bold uppercase tracking-widest flex items-center gap-2 ${currentPage === 'trends' ? 'text-white' : 'text-[#6a6a6b] hover:text-white'}`}>Industry Trends <ChevronDown className="w-3 h-3" /></button>
               <button onClick={() => navigateTo('contact')} className={`text-xs font-bold uppercase tracking-widest ${currentPage === 'contact' ? 'text-white' : 'text-[#6a6a6b] hover:text-white'}`}>Contact</button>
-              <button onClick={() => navigateTo('contact')} className="bg-white text-black px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all">Book Demo</button>
+              <button onClick={() => navigateTo('contact')} className="bg-white text-black px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all">Book Demo</button>
             </div>
 
             <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -390,7 +390,7 @@ const App: React.FC = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-[#070709] z-[100] p-12 flex flex-col gap-10 animate-in fade-in duration-300">
           <div className="flex justify-between items-center">
-            <img src={LOGO_URL} alt="Social Intelligence Logo" className="h-10 w-auto object-contain cursor-pointer" onClick={() => navigateTo('home')} />
+            <img src={LOGO_URL} alt="READLINE Logo" className="h-10 w-auto object-contain cursor-pointer" onClick={() => navigateTo('home')} />
             <button onClick={() => setIsMenuOpen(false)}><X className="w-8 h-8" /></button>
           </div>
           <div className="flex flex-col gap-8 text-4xl font-black">
@@ -398,7 +398,7 @@ const App: React.FC = () => {
             <button onClick={() => navigateTo('trends')}>Trends</button>
             <button onClick={() => navigateTo('contact')}>Contact</button>
           </div>
-          <button className="mt-auto bg-purple-600 py-6 rounded-3xl font-black text-xl">Book Demo</button>
+          <button className="mt-auto bg-red-600 py-6 rounded-3xl font-black text-xl">Book Demo</button>
         </div>
       )}
 
@@ -411,16 +411,16 @@ const App: React.FC = () => {
         <main className="animate-in fade-in duration-1000">
           <section className="pt-16 pb-32 px-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
-              <div className="w-full h-full bg-gradient-to-l from-purple-500/20 to-transparent"></div>
+              <div className="w-full h-full bg-gradient-to-l from-red-500/20 to-transparent"></div>
             </div>
             
             <div className="max-w-6xl mx-auto text-center space-y-12">
               <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tighter gradient-text">
-                Stay informed and get ahead of the conversation and where it’s going
+                From Noise to Signal
               </h1>
               <div className="max-w-5xl mx-auto space-y-8">
                 <p className="text-xl text-[#6a6a6b] leading-relaxed">
-                  See every mention of your brand on TikTok, Instagram Stories, X, YouTube comments, Reddit, news and review sites — in one dashboard. No gaps, no sampling, no surprise overages.
+                  Track every brand mention across TikTok, Instagram, Threads, Facebook, X, YouTube, Reddit, news, reviews & more—in one dashboard. See where the conversation is heading next. No gaps, no sampling, no surprise overages
                 </p>
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -430,7 +430,7 @@ const App: React.FC = () => {
 
                 <DashboardPreview />
 
-                <div className="text-[10px] font-bold text-purple-400 uppercase tracking-[0.3em] mt-8">
+                <div className="text-[10px] font-bold text-red-400 uppercase tracking-[0.3em] mt-8">
                   Wardah brand performance during November 2025
                 </div>
               </div>
@@ -443,7 +443,7 @@ const App: React.FC = () => {
             </div>
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-none">
-              <div className="w-48 h-48 md:w-64 md:h-64 bg-black rounded-full border-4 border-purple-500/30 flex flex-col items-center justify-center shadow-[0_0_80px_rgba(168,85,247,0.3)] animate-pulse">
+              <div className="w-48 h-48 md:w-64 md:h-64 bg-black rounded-full border-4 border-red-500/30 flex flex-col items-center justify-center shadow-[0_0_80px_rgba(239,68,68,0.3)] animate-pulse">
                 <span className="text-4xl md:text-6xl font-black text-white">25M+</span>
                 <span className="text-xs md:text-sm font-bold text-[#a1a1a1] uppercase tracking-[0.3em]">Sources</span>
               </div>
@@ -472,7 +472,7 @@ const App: React.FC = () => {
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
               <div className="space-y-10">
                 <div className="space-y-4 text-left">
-                  <div className="text-purple-500 font-bold text-xs uppercase tracking-widest">About Section</div>
+                  <div className="text-red-500 font-bold text-xs uppercase tracking-widest">About Section</div>
                   <h2 className="text-5xl font-black text-white">Access Customer Insight</h2>
                   <p className="text-lg text-[#6a6a6b] leading-relaxed">Learn from online conversations about your company. Get access to honest consumer feedback and understand why users choose you over competitors.</p>
                 </div>
@@ -487,14 +487,14 @@ const App: React.FC = () => {
                         href="https://imm-studycase.vercel.app/" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-purple-900/20"
+                        className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-red-900/20"
                        >
                          READ NOW <ArrowUpRight className="w-4 h-4" />
                        </a>
                     </div>
                   </div>
                   <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${currentCaseIndex === 1 ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
-                    <div className="bg-[#161618] border border-purple-500/30 p-10 rounded-[2.5rem] h-full relative overflow-hidden group">
+                    <div className="bg-[#161618] border border-red-500/30 p-10 rounded-[2.5rem] h-full relative overflow-hidden group">
                        <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity"><Sparkles className="w-32 h-32" /></div>
                        <h4 className="text-2xl font-bold text-white mb-4">WARDAH Case Example</h4>
                        <p className="text-sm text-[#a1a1a1] leading-relaxed mb-6">Discovery our latest Wardah Brand Growth Pivot analysis. Understanding consumer movement and glow performance signals.</p>
@@ -502,7 +502,7 @@ const App: React.FC = () => {
                         href="https://imm-studycase.vercel.app/" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-purple-900/20"
+                        className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-red-900/20"
                        >
                          READ NOW <ArrowUpRight className="w-4 h-4" />
                        </a>
@@ -511,16 +511,16 @@ const App: React.FC = () => {
                 </div>
                 
                 <div className="flex gap-2 justify-center lg:justify-start">
-                  <button onClick={() => setCurrentCaseIndex(0)} className={`w-8 h-1 rounded-full transition-all ${currentCaseIndex === 0 ? 'bg-purple-500' : 'bg-[#252527]'}`}></button>
-                  <button onClick={() => setCurrentCaseIndex(1)} className={`w-8 h-1 rounded-full transition-all ${currentCaseIndex === 1 ? 'bg-purple-500' : 'bg-[#252527]'}`}></button>
+                  <button onClick={() => setCurrentCaseIndex(0)} className={`w-8 h-1 rounded-full transition-all ${currentCaseIndex === 0 ? 'bg-red-500' : 'bg-[#252527]'}`}></button>
+                  <button onClick={() => setCurrentCaseIndex(1)} className={`w-8 h-1 rounded-full transition-all ${currentCaseIndex === 1 ? 'bg-red-500' : 'bg-[#252527]'}`}></button>
                 </div>
               </div>
 
               <div className="relative text-left">
-                <div className="absolute inset-0 bg-purple-600/20 blur-[120px] rounded-full"></div>
+                <div className="absolute inset-0 bg-red-600/20 blur-[120px] rounded-full"></div>
                 <div className="relative bg-[#0c0c0e] border border-white/5 p-12 rounded-[3rem] shadow-2xl">
                    <div className="flex items-center gap-3 mb-8">
-                     <Sparkles className="w-6 h-6 text-purple-500" />
+                     <Sparkles className="w-6 h-6 text-red-500" />
                      <h3 className="text-2xl font-bold">AI Power Suggestion</h3>
                    </div>
                    <div className="space-y-4">
@@ -530,8 +530,8 @@ const App: React.FC = () => {
                        { text: "Real-time crisis alert system", icon: <AlertTriangle className="w-5 h-5" /> },
                        { text: "Automated thematic clustering", icon: <Database className="w-5 h-5" /> }
                      ].map((item, idx) => (
-                       <div key={idx} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl group hover:border-purple-500/50 transition-colors">
-                         <div className="bg-purple-500/10 p-2 rounded-lg text-purple-400">
+                       <div key={idx} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl group hover:border-red-500/50 transition-colors">
+                         <div className="bg-red-500/10 p-2 rounded-lg text-red-400">
                            {item.icon}
                          </div>
                          <span className="text-sm font-medium">{item.text}</span>
@@ -551,8 +551,8 @@ const App: React.FC = () => {
               </div>
               <div className="grid md:grid-cols-3 gap-8 text-left">
                 {FEATURES.map((f, i) => (
-                  <div key={i} className="p-10 bg-[#0c0c0e] border border-[#1b1b1d] rounded-3xl space-y-6 group hover:border-purple-500/50 transition-all hover:-translate-y-2">
-                    <div className="w-12 h-12 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-purple-500">{f.icon}</div>
+                  <div key={i} className="p-10 bg-[#0c0c0e] border border-[#1b1b1d] rounded-3xl space-y-6 group hover:border-red-500/50 transition-all hover:-translate-y-2">
+                    <div className="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center justify-center text-red-500">{f.icon}</div>
                     <h4 className="text-xl font-bold text-white">{f.title}</h4>
                     <p className="text-sm text-[#6a6a6b] leading-relaxed">{f.desc}</p>
                   </div>
@@ -564,7 +564,7 @@ const App: React.FC = () => {
           <section className="py-32 px-6 bg-gradient-to-b from-transparent to-[#0c0c0e]">
             <div className="max-w-7xl mx-auto">
               <div className="bg-white/5 border border-white/10 p-16 md:p-24 rounded-[4rem] text-center space-y-12 relative overflow-hidden">
-                <div className="absolute -top-24 -left-24 w-64 h-64 bg-purple-500/20 blur-[100px] rounded-full"></div>
+                <div className="absolute -top-24 -left-24 w-64 h-64 bg-red-500/20 blur-[100px] rounded-full"></div>
                 <div className="space-y-6 relative z-10">
                   <h2 className="text-5xl md:text-7xl font-black">Analytics at Scale</h2>
                   <p className="text-xl text-[#a1a1a1] max-w-3xl mx-auto">Turn every digital signal into a strategic win. Scale your response capability without scaling your headcount.</p>
@@ -578,7 +578,7 @@ const App: React.FC = () => {
                    ].map(stat => (
                      <div key={stat.label} className="space-y-2">
                        <div className="text-4xl font-black text-white">{stat.label}</div>
-                       <div className="text-[10px] font-bold text-purple-400 uppercase tracking-widest">{stat.sub}</div>
+                       <div className="text-[10px] font-bold text-red-400 uppercase tracking-widest">{stat.sub}</div>
                      </div>
                    ))}
                 </div>
@@ -596,7 +596,7 @@ const App: React.FC = () => {
                       onClick={() => setActiveFaq(activeFaq === i ? null : i)}
                       className="w-full py-8 flex items-center justify-between text-left group"
                     >
-                      <span className={`text-lg font-bold transition-colors ${activeFaq === i ? 'text-purple-400' : 'text-white'}`}>{faq.q}</span>
+                      <span className={`text-lg font-bold transition-colors ${activeFaq === i ? 'text-red-400' : 'text-white'}`}>{faq.q}</span>
                       <div className={`transition-transform duration-300 ${activeFaq === i ? 'rotate-180' : ''}`}>
                         <ChevronDown className="w-6 h-6 text-[#4a4a4b]" />
                       </div>
@@ -614,7 +614,7 @@ const App: React.FC = () => {
 
           <section className="py-32 px-6">
             <div className="max-w-7xl mx-auto">
-              <div className="bg-purple-600 p-16 md:p-24 rounded-[4rem] flex flex-col lg:flex-row items-center justify-between gap-12 relative overflow-hidden text-left">
+              <div className="bg-gradient-to-br from-red-600 to-red-800 p-16 md:p-24 rounded-[4rem] flex flex-col lg:flex-row items-center justify-between gap-12 relative overflow-hidden text-left">
                 <div className="absolute top-0 right-0 opacity-10"><BrainCircuit className="w-96 h-96" /></div>
                 <div className="space-y-6 z-10 text-center lg:text-left">
                   <h2 className="text-5xl md:text-6xl font-black text-white">Get Your Free <br/>Brand Analysis</h2>
@@ -637,11 +637,11 @@ const App: React.FC = () => {
                </div>
                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                   {["Retail", "F&B", "Automotive", "Banking", "Beauty", "Tech"].map(cat => (
-                    <div key={cat} className="p-12 bg-[#0c0c0e] border border-[#1b1b1d] rounded-3xl group hover:border-purple-500 transition-colors">
-                      <TrendingUp className="w-10 h-10 text-purple-500 mb-8" />
+                    <div key={cat} className="p-12 bg-[#0c0c0e] border border-[#1b1b1d] rounded-3xl group hover:border-red-500 transition-colors">
+                      <TrendingUp className="w-10 h-10 text-red-500 mb-8" />
                       <h4 className="text-2xl font-bold mb-4">{cat} Analysis</h4>
                       <p className="text-sm text-[#6a6a6b] mb-8">Quarterly insights on sentiment volume and emerging trends in the {cat} sector.</p>
-                      <button className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-purple-400">View Trends <ChevronRight className="w-4 h-4" /></button>
+                      <button className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-400">View Trends <ChevronRight className="w-4 h-4" /></button>
                     </div>
                   ))}
                </div>
@@ -654,24 +654,24 @@ const App: React.FC = () => {
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 text-left">
               <div className="space-y-12">
                 <h1 className="text-7xl font-black">Contact Us.</h1>
-                <p className="text-xl text-[#6a6a6b]">Let's discuss how Social Intelligence can elevate your brand's data strategy.</p>
+                <p className="text-xl text-[#6a6a6b]">Let's discuss how READLINE can elevate your brand's data strategy.</p>
                 <div className="space-y-6 pt-12">
-                   <div className="flex items-center gap-6 text-[#a1a1a1] hover:text-white transition-colors cursor-pointer"><Mail className="w-6 h-6 text-purple-500" /> halo@socialintelligence.ai</div>
-                   <div className="flex items-center gap-6 text-[#a1a1a1] hover:text-white transition-colors cursor-pointer"><Phone className="w-6 h-6 text-purple-500" /> +62 21 5000 8000</div>
-                   <div className="flex items-center gap-6 text-[#a1a1a1] hover:text-white transition-colors cursor-pointer"><MapPin className="w-6 h-6 text-purple-500" /> SCBD, Jakarta, Indonesia</div>
+                   <a href="mailto:halo@readline.com" className="flex items-center gap-6 text-[#a1a1a1] hover:text-white transition-colors cursor-pointer"><Mail className="w-6 h-6 text-red-500" /> halo@readline.com</a>
+                   <a href="https://wa.me/628992939911" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 text-[#a1a1a1] hover:text-white transition-colors cursor-pointer"><Phone className="w-6 h-6 text-red-500" /> WhatsApp Us</a>
+                   <div className="flex items-center gap-6 text-[#a1a1a1] hover:text-white transition-colors cursor-pointer"><MapPin className="w-6 h-6 text-red-500" /> Menara Salemba, Jalan Salemba Raya No. 5A 10440 Jakarta Jakarta</div>
                 </div>
               </div>
               <form className="bg-[#0c0c0e] border border-[#1b1b1d] p-12 rounded-[3rem] space-y-6">
-                <input type="text" placeholder="Full Name" className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-white focus:outline-none focus:border-purple-500" />
-                <input type="email" placeholder="Company Email" className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-white focus:outline-none focus:border-purple-500" />
-                <select className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-[#a1a1a1] focus:outline-none focus:border-purple-500">
+                <input type="text" placeholder="Full Name" className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-white focus:outline-none focus:border-red-500" />
+                <input type="email" placeholder="Company Email" className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-white focus:outline-none focus:border-red-500" />
+                <select className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-[#a1a1a1] focus:outline-none focus:border-red-500">
                   <option>Select Industry</option>
                   <option>Retail</option>
                   <option>F&B</option>
                   <option>Technology</option>
                 </select>
-                <textarea rows={4} placeholder="Your Message" className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-white focus:outline-none focus:border-purple-500 resize-none"></textarea>
-                <button className="w-full py-6 bg-white text-black rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all">Send Inquiry</button>
+                <textarea rows={4} placeholder="Your Message" className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-white focus:outline-none focus:border-red-500 resize-none"></textarea>
+                <button className="w-full py-6 bg-white text-black rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all">Send Inquiry</button>
               </form>
             </div>
           </section>
@@ -682,15 +682,20 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 mb-24">
           <div className="col-span-1 md:col-span-2 space-y-10">
             <div className="flex items-center gap-3">
-               <img src={LOGO_URL} alt="Social Intelligence Logo" className="h-10 md:h-12 w-auto object-contain cursor-pointer" onClick={() => navigateTo('home')} />
+               <img src={LOGO_URL} alt="READLINE Logo" className="h-10 md:h-12 w-auto object-contain cursor-pointer" onClick={() => navigateTo('home')} />
             </div>
             <p className="text-[#6a6a6b] max-sm leading-relaxed">
-              Leading the next generation of social listening. Based in Jakarta, empowering brands across South East Asia with high-fidelity sentiment analysis.
+              Based in Jakarta, The Readline helps brands capture real conversations and understand what’s actually shifting sentiment. 
             </p>
             <div className="flex items-center gap-8">
-              <Instagram className="w-6 h-6 text-[#4a4a4b] hover:text-white cursor-pointer" />
-              <Twitter className="w-6 h-6 text-[#4a4a4b] hover:text-white cursor-pointer" />
-              <Linkedin className="w-6 h-6 text-[#4a4a4b] hover:text-white cursor-pointer" />
+              <a href="https://www.instagram.com/thereadlineid?igsh=eTY2enJjcXdhamUz" target="_blank" rel="noopener noreferrer"><Instagram className="w-6 h-6 text-[#4a4a4b] hover:text-white cursor-pointer" /></a>
+              <a href="https://x.com/thereadlineid" target="_blank" rel="noopener noreferrer">
+                {/* Modern X Logo replacement */}
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-[#4a4a4b] hover:text-white cursor-pointer transition-colors" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/showcase/read-line-id" target="_blank" rel="noopener noreferrer"><Linkedin className="w-6 h-6 text-[#4a4a4b] hover:text-white cursor-pointer" /></a>
             </div>
           </div>
           
@@ -707,15 +712,15 @@ const App: React.FC = () => {
           <div className="space-y-6">
             <h5 className="text-white font-bold text-xs uppercase tracking-widest">Office Info</h5>
             <div className="space-y-4 text-sm text-[#6a6a6b]">
-              <p>Jakarta, Indonesia<br/>Sudirman Central Business District</p>
-              <p>halo@socialintelligence.ai</p>
-              <p>+62 21 5000 8000</p>
+              <p>Menara Salemba, Jalan Salemba Raya No. 5A 10440 Jakarta Jakarta</p>
+              <p>halo@readline.com</p>
+              <a href="https://wa.me/628992939911" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp Us</a>
             </div>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto pt-10 border-t border-[#1b1b1d] flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-[#4a4a4b]">
-          <p>© 2026 socialintelligence.ai</p>
+          <p>© 2026 Thereadline.com</p>
           <div className="flex gap-10">
             <span className="hover:text-white cursor-pointer">Privacy Policy</span>
             <span className="hover:text-white cursor-pointer">Terms of Use</span>
