@@ -398,37 +398,40 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
 
       {/* Visual Timeline Section */}
       <section className="space-y-8">
-        <h3 className="text-2xl font-black text-white uppercase tracking-widest text-center">Ramadhan Campaign Timeline</h3>
+        <h3 className="text-2xl font-black text-white uppercase tracking-widest text-center">Ramadhan Campaign : Wardah's biggest moment every year</h3>
         <div className="relative group">
           <img 
-            src="https://cdn.prod.website-files.com/693645fac59cc49511b119e3/69498a44b7d60232400e9603_Untitled_design-removebg-preview.png" 
+            src="https://i.imgur.com/ed8oICW.png" 
             alt="Wardah Ramadhan Campaign Timeline" 
-            className="w-full h-auto rounded-[3rem] shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]"
+            className="w-full h-auto rounded-[1rem] md:rounded-[3rem] shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]"
           />
-          <div className="absolute inset-0 rounded-[3rem] border border-white/5 pointer-events-none"></div>
+          <div className="absolute inset-0 rounded-[1rem] md:rounded-[3rem] border border-white/5 pointer-events-none"></div>
         </div>
       </section>
 
-      {/* Zia Campaign Detail */}
-      <section className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8 text-[#a1a1a1] text-lg leading-relaxed">
-          <h2 className="text-4xl font-black text-white">Two years later, the approach remains unchanged only sharper</h2>
-          <p>
-            In Ramadan 2025, Wardah launched <em>Menangkan Langkah Kebaikan</em> (Win the Steps of Kindness), a campaign following Zia, a young woman who asks her mother to remove her hijab. The narrative explores self-discovery while staying true to faith—a story that resonated deeply with Wardah's core audience.
-          </p>
-          <p>
-            The campaign did not chase hard sales. It told a story. On Instagram, reels surpassed 5.6 million views. The short film on YouTube drew 84,000 views and comments like: <em>"I'd keep watching if Wardah keeps producing meaningful series like this"</em>.
-          </p>
-          <p>
-            This is not a promotional spike. This is structural loyalty. Wardah does not merely transact during Ramadan; it <strong>encodes itself</strong> into women's daily practice year after year.
-          </p>
-        </div>
-        <div className="relative group">
-          <img 
-            src="https://cdn.prod.website-files.com/693645fac59cc49511b119e3/69498a96cc07817452d3a771_Untitled_design__1_-removebg-preview.png" 
-            alt="Menangkan Langkah Kebaikan Impact Chart" 
-            className="w-full h-auto rounded-[3rem] shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]"
-          />
+      {/* Zia Campaign Detail / Impact Analysis Visual */}
+      <section className="space-y-12">
+        <div className="grid lg:grid-cols-5 gap-12 items-start">
+          <div className="lg:col-span-3 space-y-8 text-[#a1a1a1] text-lg leading-relaxed">
+            <h2 className="text-4xl font-black text-white">Two years later, the approach remains unchanged only sharper</h2>
+            <p>
+              In Ramadan 2025, Wardah launched <em>Menangkan Langkah Kebaikan</em> (Win the Steps of Kindness), a campaign following Zia, a young woman who asks her mother to remove her hijab. The narrative explores self-discovery while staying true to faith—a story that resonated deeply with Wardah's core audience.
+            </p>
+            <p>
+              The campaign did not chase hard sales. It told a story. On Instagram, reels surpassed 5.6 million views. The short film on YouTube drew 84,000 views and comments like: <em>"I'd keep watching if Wardah keeps producing meaningful series like this"</em>.
+            </p>
+            <p>
+              This is not a promotional spike. This is structural loyalty. Wardah does not merely transact during Ramadan; it <strong>encodes itself</strong> into women's daily practice year after year.
+            </p>
+          </div>
+          <div className="lg:col-span-2 relative group">
+            <img 
+              src="https://i.imgur.com/E24rYe3.png" 
+              alt="Menangkan Langkah Kebaikan Campaign Breakdown" 
+              className="w-full h-auto rounded-[1rem] md:rounded-[3rem] shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]"
+            />
+            <div className="absolute inset-0 rounded-[1rem] md:rounded-[3rem] border border-white/5 pointer-events-none"></div>
+          </div>
         </div>
       </section>
 
