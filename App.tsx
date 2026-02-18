@@ -67,7 +67,7 @@ interface Source {
   url: string;
 }
 
-type PageType = 'home' | 'trends' | 'contact' | 'retail-blog';
+type PageType = 'home' | 'trends' | 'contact' | 'retail-blog' | 'hospitality-blog';
 
 // --- Constants ---
 
@@ -130,7 +130,7 @@ const AnnouncementBar = () => (
 );
 
 const DashboardPreview = () => (
-  <div className="w-full max-w-6xl mx-auto p-6 md:p-8 bg-[#0c0c0e] rounded-3xl border border-[#1b1b1d] shadow-2xl overflow-hidden text-white font-sans">
+  <div className="w-full max-w-6xl mx-auto p-6 md:p-8 bg-[#0c0c0e] rounded-3xl border border-[#1b1b1d] shadow-2xl overflow-hidden text-white font-sans text-left">
     {/* Top Grid */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
       {[
@@ -175,7 +175,7 @@ const DashboardPreview = () => (
 
         {/* Mock Chart */}
         <div className="relative h-64 flex items-end justify-around border-b border-[#252527] pb-2">
-           <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-[10px] text-gray-600 font-medium">
+           <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-[10px] text-gray-600 font-medium text-left">
              <span>28</span><span>21</span><span>14</span><span>7</span><span>0</span>
            </div>
            
@@ -225,7 +225,7 @@ const MegaMenu = ({ isOpen, onClose, navigateTo }: { isOpen: boolean; onClose: (
       className="absolute top-full left-0 w-full bg-[#070709] border-b border-[#1b1b1d] p-12 grid grid-cols-4 gap-12 animate-in slide-in-from-top-4 duration-300 z-50 shadow-2xl"
       onMouseLeave={onClose}
     >
-      <div className="space-y-6">
+      <div className="space-y-6 text-left">
         <h4 className="text-red-500 font-bold text-xs uppercase tracking-widest">Solutions</h4>
         <ul className="space-y-4">
           {["Brand Intelligence", "Crisis Management", "Competitor Tracking", "Market Research"].map(item => (
@@ -235,16 +235,17 @@ const MegaMenu = ({ isOpen, onClose, navigateTo }: { isOpen: boolean; onClose: (
           ))}
         </ul>
       </div>
-      <div className="space-y-6">
+      <div className="space-y-6 text-left">
         <h4 className="text-red-500 font-bold text-xs uppercase tracking-widest">Industry Trends</h4>
         <ul className="space-y-4">
           <li className="text-[#a1a1a1] hover:text-white cursor-pointer text-sm transition-colors font-bold" onClick={() => navigateTo('retail-blog')}>Retail & E-commerce</li>
-          {["Hospitality", "Healthcare", "Financial Services"].map(item => (
+          <li className="text-[#a1a1a1] hover:text-white cursor-pointer text-sm transition-colors font-bold" onClick={() => navigateTo('hospitality-blog')}>Hospitality</li>
+          {["Healthcare", "Financial Services"].map(item => (
             <li key={item} className="text-[#a1a1a1] hover:text-white cursor-pointer text-sm transition-colors" onClick={() => navigateTo('trends')}>{item}</li>
           ))}
         </ul>
       </div>
-      <div className="space-y-6">
+      <div className="space-y-6 text-left">
         <h4 className="text-red-500 font-bold text-xs uppercase tracking-widest">Resources</h4>
         <ul className="space-y-4">
           {["Intelligence Reports", "Case Studies", "Documentation"].map(item => (
@@ -252,7 +253,7 @@ const MegaMenu = ({ isOpen, onClose, navigateTo }: { isOpen: boolean; onClose: (
           ))}
         </ul>
       </div>
-      <div className="bg-gradient-to-br from-[#161618] to-[#0c0c0e] p-8 rounded-3xl border border-[#252527] space-y-4">
+      <div className="bg-gradient-to-br from-[#161618] to-[#0c0c0e] p-8 rounded-3xl border border-[#252527] space-y-4 text-left">
         <Sparkles className="text-red-500 w-8 h-8" />
         <h4 className="text-white font-bold text-lg">Featured Insights</h4>
         <p className="text-[#6a6a6b] text-xs leading-relaxed">Wardah 2026 Growth Pivot: Movement + Glow Performance Analysis.</p>
@@ -263,9 +264,9 @@ const MegaMenu = ({ isOpen, onClose, navigateTo }: { isOpen: boolean; onClose: (
 };
 
 const Breadcrumbs = ({ current }: { current: PageType }) => {
-  const labels: Record<PageType, string> = { home: 'Home', trends: 'Industry Trends', contact: 'Contact', 'retail-blog': 'Retail & E-commerce' };
+  const labels: Record<PageType, string> = { home: 'Home', trends: 'Industry Trends', contact: 'Contact', 'retail-blog': 'Retail & E-commerce', 'hospitality-blog': 'Hospitality' };
   return (
-    <div className="w-full bg-[#070709] border-b border-[#1b1b1d] relative z-40">
+    <div className="w-full bg-[#070709] border-b border-[#1b1b1d] relative z-40 text-left">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-2 text-[9px] uppercase font-bold tracking-[0.2em] text-[#4a4a4b]">
         <span className="hover:text-white cursor-pointer transition-colors" onClick={() => window.location.reload()}>READLINE</span>
         <ChevronRight className="w-3 h-3" />
@@ -294,17 +295,17 @@ const SourceCard: React.FC<{ source: Source }> = ({ source }) => (
   </a>
 );
 
-// --- Retail Blog Component ---
+// --- Blog Components ---
 
 const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
   return (
-    <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-7xl mx-auto px-6 py-12 space-y-24 text-left font-['Inter']">
+    <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-5xl mx-auto px-6 py-12 space-y-12 text-left font-['Inter']">
       <button onClick={onBack} className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-500 hover:text-white transition-colors">
         <ArrowLeft className="w-4 h-4" /> Back to Home
       </button>
 
       {/* Hero Header Section */}
-      <section className="space-y-12">
+      <section className="space-y-8">
         <div className="space-y-4">
           <div className="flex items-center gap-4 text-[10px] font-bold text-red-400 uppercase tracking-widest">
             <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> Published 2026</span>
@@ -316,8 +317,8 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
       </section>
 
       {/* Section 1: Page 1 Content */}
-      <section className="space-y-16">
-        <div className="relative group mx-auto">
+      <section className="space-y-8">
+        <div className="relative group">
           <img 
             src="https://i.imgur.com/VwB8Act.png" 
             alt="Ramadhan Campaign Timeline 2021-2025" 
@@ -326,8 +327,8 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
           <div className="absolute inset-0 rounded-[1rem] md:rounded-[3rem] border border-white/5 pointer-events-none"></div>
         </div>
 
-        <div className="max-w-4xl space-y-8 text-lg leading-relaxed text-[#a1a1a1]">
-          <p className="text-white font-medium text-xl border-l-4 border-red-500 pl-6 py-2">
+        <div className="space-y-4 text-lg leading-relaxed text-[#a1a1a1] text-justify">
+          <p className="text-white font-medium text-xl border-l-4 border-red-500 pl-6 py-2 text-left">
             As one of the biggest skincare and makeup brands in Indonesia and even in Southeast Asia, Wardah understands one crucial truth: in the world’s largest Muslim country, religion doesn’t just influence life. It shapes it.
           </p>
           <p>
@@ -346,15 +347,15 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
           <p>
             Not just halal-certified. Values-aligned. That single shift transforms makeup from something cosmetic into something spiritually safe. Wardah doesn’t just sell products it sells <strong>moral reassurance</strong>.
           </p>
-          <div className="pt-8">
+          <div className="pt-4 text-left">
             <h2 className="text-4xl font-black text-white font-heading">Why Ramadan is Wardah’s strongest season</h2>
-            <p className="mt-6">Every year, Ramadan becomes Wardah’s biggest moment.</p>
+            <p className="mt-2 text-justify">Every year, Ramadan becomes Wardah’s biggest moment.</p>
           </div>
         </div>
       </section>
 
       {/* Section 2: Page 2 Content */}
-      <section className="max-w-4xl space-y-8 text-[#a1a1a1] text-lg leading-relaxed">
+      <section className="space-y-4 text-[#a1a1a1] text-lg leading-relaxed text-justify">
         <p>
           Not because they shout louder than other brands. But because they turn Ramadan into their <strong>cultural home turf</strong>.
         </p>
@@ -371,7 +372,7 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
         <p>
           In this month, many women are not trying to be more trendy or more expressive. They are trying to be more:
         </p>
-        <ul className="list-disc pl-8 space-y-2">
+        <ul className="list-disc pl-8 space-y-2 text-left">
           <li>pure</li>
           <li>disciplined</li>
           <li>spiritually aligned</li>
@@ -380,19 +381,19 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
         <p>
           Wardah places itself right inside that emotional state. That is why their Ramadan campaigns feel different. They don’t feel like ads. They feel like part of the month itself.
         </p>
-        <div className="pt-8">
+        <div className="pt-4 text-left">
           <h3 className="text-2xl font-black text-white font-heading">The proof is in what persists.</h3>
-          <p className="mt-6">
+          <p className="mt-2 text-justify">
             In 2023, Wardah's #BersamaLebihBermakna campaign reached 40 million Indonesians. Online sales nearly doubled. But the more telling metric was behavioral: <strong>regular usage</strong> — women reaching for Wardah not because they saw an ad, but out of habit increased by 10 percentage points and remained elevated a full month after Ramadan ended.
           </p>
-          <p className="mt-6">
+          <p className="mt-2 text-justify">
             The habit outlasted the holy month. The ritual became routine. Two years later, the approach remains unchanged only sharper.
           </p>
         </div>
       </section>
 
       {/* Section 3: Page 3 Content & Zia Campaign Impact */}
-      <section className="space-y-12">
+      <section className="space-y-8">
         <div className="relative group">
           <img 
             src="https://i.imgur.com/NfRyxcw.png" 
@@ -402,7 +403,7 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
           <div className="absolute inset-0 rounded-[1rem] md:rounded-[3rem] border border-white/5 pointer-events-none"></div>
         </div>
         
-        <div className="max-w-4xl space-y-8 text-[#a1a1a1] text-lg leading-relaxed">
+        <div className="space-y-4 text-[#a1a1a1] text-lg leading-relaxed text-justify">
           <p>
             In Ramadan 2025, Wardah launched <em>Menangkan Langkah Kebaikan</em> (Win the Steps of Kindness), a campaign following Zia, a young woman who asks her mother to remove her hijab. The narrative explores self-discovery while staying true to faith—a story that resonated deeply with Wardah's core audience.
           </p>
@@ -413,19 +414,19 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
             This is not a promotional spike. This is structural loyalty. Wardah does not merely transact during Ramadan; it <strong>encodes itself</strong> into women's daily practice year after year.
           </p>
           
-          <div className="pt-12">
+          <div className="pt-8 text-left">
             <h2 className="text-4xl font-black text-white font-heading">Why continuity matters more than trends</h2>
-            <p className="mt-6">
+            <p className="mt-2 text-justify">
               Wardah does not chase what is fashionable each year. They build continuity. Look at their campaign taglines across five years:
             </p>
-            <div className="mt-8 space-y-4 font-bold text-white bg-white/5 p-8 rounded-3xl border border-white/10">
+            <div className="mt-4 space-y-2 font-bold text-white bg-white/5 p-8 rounded-3xl border border-white/10 text-left">
               <p>2021 → #LangkahBaikmuBerarti — <span className="text-[#a1a1a1]">Your Good Steps Matter</span></p>
               <p>2022 → #BergerakHidupkanHarapan — <span className="text-[#a1a1a1]">Move to Bring Hope to Life</span></p>
               <p>2023 → #BersamaLebihBermakna — <span className="text-[#a1a1a1]">Together is More Meaningful</span></p>
               <p>2024 → #TeruskanLangkahBaikmu — <span className="text-[#a1a1a1]">Continue Your Good Steps</span></p>
               <p>2025 → #MenangkanLangkahKebaikan — <span className="text-[#a1a1a1]">Win the Steps of Kindness</span></p>
             </div>
-            <p className="mt-8">
+            <p className="mt-4 text-justify">
               At first glance, these appear distinct. Different words. Different creative executions.
             </p>
           </div>
@@ -433,7 +434,7 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
       </section>
 
       {/* Section 4: Page 4 Content & Conclusion */}
-      <section className="max-w-4xl space-y-12 text-[#a1a1a1] text-lg leading-relaxed">
+      <section className="space-y-8 text-[#a1a1a1] text-lg leading-relaxed text-justify">
         <p>
           But beneath the surface, a single thread binds them together. The words, never spoken in any tagline yet present in all of them: <strong>Good Steps</strong>.
         </p>
@@ -441,9 +442,9 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
           Using those words, Wardah has spent five Ramadans teaching Indonesian women that those two words belong to them. Not as a slogan.
         </p>
         
-        <div className="space-y-12 py-16 bg-white/5 rounded-[4rem] p-12 border border-white/10">
+        <div className="space-y-8 py-12 bg-white/5 rounded-[4rem] p-12 border border-white/10 text-justify">
           <h2 className="text-4xl font-black text-center text-white font-heading">Why Ramadan Belongs to Wardah</h2>
-          <div className="space-y-8">
+          <div className="space-y-4">
             <p>
               Wardah does not win Ramadan because they spend the most. They do not win because they have the most influencers, the loudest activations, or the most aggressive sales push. None of that explains why their campaigns never feel like ads, or why women continue reaching for Wardah long after Eid moon is sighted.
             </p>
@@ -453,8 +454,8 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
             <p>
               The words change slightly. The meaning does not. And after half a decade of repetition, those words are no longer a slogan. They are a shared vocabulary between brand and consumer, a linguistic home that women return to each Ramadan the way they return to familiar prayers.
             </p>
-            <p>
-              <strong>This is how marketing becomes tradition.</strong>
+            <p className="text-center font-bold text-white">
+              This is how marketing becomes tradition.
             </p>
             <p>
               Not through virality. Not through reach. Through reappearance so consistent, so faithful to its own thesis, that it eventually ceases to be perceived as commercial speech. It becomes simply <strong>what Ramadan feels like.</strong>
@@ -462,6 +463,404 @@ const RetailBlogPage = ({ onBack }: { onBack: () => void }) => {
             <p>
               And when a brand becomes part of a religious tradition, it stops being a choice. It becomes a companion. Not evaluated, not compared, not reconsidered each year. Just present.
             </p>
+          </div>
+          <div className="pt-8 text-center">
+            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-flex items-center gap-2 px-10 py-5 border border-red-500/20 bg-red-500/10 text-red-500 rounded-full font-black text-xs uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all font-heading">
+              Return to Top
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+const HospitalityBlogPage = ({ onBack }: { onBack: () => void }) => {
+  return (
+    <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-5xl mx-auto px-6 py-12 space-y-12 text-left font-['Inter']">
+      <button onClick={onBack} className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-500 hover:text-white transition-colors">
+        <ArrowLeft className="w-4 h-4" /> Back to Home
+      </button>
+
+      {/* Hero Header Section */}
+      <section className="space-y-8">
+        <div className="space-y-4">
+          <div className="flex items-center gap-4 text-[10px] font-bold text-red-400 uppercase tracking-widest">
+            <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> Published 2026</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight max-w-5xl font-heading">
+            How Airbnb Built a Lasting Tagline
+          </h1>
+          <p className="text-xl text-[#a1a1a1] font-medium italic">A tagline is not just a catchy phrase. It is a compressed brand promise.</p>
+        </div>
+      </section>
+
+      {/* Section 1: Page 1 Content */}
+      <section className="space-y-8">
+        <div className="relative group">
+          <img 
+            src="https://i.imgur.com/rf33kPU.jpeg" 
+            alt="Airbnb Lasting Tagline" 
+            className="w-full h-auto rounded-[1rem] md:rounded-[3rem] shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]"
+          />
+          <div className="absolute inset-0 rounded-[1rem] md:rounded-[3rem] border border-white/5 pointer-events-none"></div>
+        </div>
+
+        <div className="space-y-4 text-lg leading-relaxed text-[#a1a1a1] text-justify">
+          <p>
+            In the crowded marketplace where consumers are bombarded with thousands of marketing messages daily, a few words can make all the difference.
+          </p>
+          <p>
+            Think about Airbnb’s “Belong Anywhere.” Two simple words. Yet they’ve guided how the brand shows up in homes, cities, cultures, and stories around the world for more than a decade. Those words didn’t describe rooms. They described how people want to feel when they travel.
+          </p>
+          <p>
+            This wasn’t an accident. It wasn’t something someone wrote in a quick brainstorming session. It was the result of strategic compression distilling Airbnb’s entire reason for being into a single emotional truth.
+          </p>
+          <p>
+            Yet most companies get taglines wrong. They treat them as decoration. They hand them off to copywriters who don’t understand the business. Or they chase cleverness at the expense of meaning.
+          </p>
+          <p>
+            This article will walk you through a systematic approach to creating a brand tagline that doesn't just sound good but actually works.
+          </p>
+
+          <div className="pt-4 text-left">
+            <h2 className="text-3xl font-black text-white font-heading">Step 1: The Groundwork, Why You Cannot Write a Tagline Without Strategy</h2>
+            <p className="mt-2 text-justify">
+              Here is the most common mistake companies make: they try to write the tagline first. They gather the team, put up a whiteboard, and start throwing out words. "Fast." "Quality." "Innovation." "Together." Everyone votes on their favorites. Someone makes a design mockup. And the company ends up with something generic that could apply to literally any business in their industry.
+            </p>
+            <p className="mt-2 text-justify">
+              This approach fails because taglines are not creative exercises. They are <strong>strategic exercises expressed creatively</strong>.
+            </p>
+            <p className="mt-3 font-bold text-white text-left">Before a single word is written, you need to answer three questions with brutal honesty:</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Page 2 Content - TIGHTER SPACING */}
+      <section className="space-y-6 text-[#a1a1a1] text-lg leading-relaxed text-justify">
+        <div className="space-y-4">
+          <div className="text-left">
+            <h3 className="text-xl font-bold text-white mb-1">1. What is the product's objective in people's lives?</h3>
+            <p className="text-justify">
+              This is deeper than "what does it do?" A vacuum cleaner's objective isn't "cleans floors." Its objective is "creates a peaceful home environment." A project management tool's objective isn't "tracks tasks." Its objective is "reduces anxiety about missed deadlines."
+            </p>
+            <p className="mt-1 italic text-left">Ask yourself: What void does this product fill that isn't just functional?</p>
+          </div>
+
+          <div className="text-left">
+            <h3 className="text-xl font-bold text-white mb-1">2. Who is it for specifically?</h3>
+            <p className="text-justify">
+              Demographics are not enough. "Women 25-40" tells you nothing about how they think or feel. You need psychographics: What are their morning routines? What keeps them up at night? What do they tell themselves to feel better about their choices?
+            </p>
+            <p className="mt-1 text-justify">
+              When Gojek was developing its brand, they didn't target "urban Indonesians." They targeted people who felt overwhelmed by daily logistics—who juggled five apps just to get through the day, who felt like modern life was supposed to be easier than this.
+            </p>
+          </div>
+
+          <div className="text-left">
+            <h3 className="text-xl font-bold text-white mb-1">3. What does the brand actually provide beyond the obvious?</h3>
+            <p className="text-justify">
+              A bank doesn't just provide loans. It provides the ability to build a life. A mattress company doesn't just provide sleep. It provides the energy to be a better parent, partner, employee.
+            </p>
+            <p className="mt-1 text-justify">
+              This is the offering layer that most companies never articulate. They stay on the surface. And their taglines reflect that shallowness.
+            </p>
+            <p className="mt-2 text-red-400 font-bold text-left">A tagline built without this foundation is just decoration. It might win awards. It might make the CEO smile. But it won't drive growth.</p>
+          </div>
+        </div>
+
+        <div className="pt-6 text-left">
+          <h2 className="text-3xl font-black text-white font-heading">Step 2: The Emotional Shift — From Features to Feelings</h2>
+          <p className="mt-2 text-justify">
+            Here is a truth that technology companies struggle with: <strong>people do not form attachments to specifications</strong>.
+          </p>
+          <p className="text-justify">
+            No one falls in love with a processor speed. No one lies awake at night dreaming about thread count. No one tells their friends about the tensile strength of their luggage.
+          </p>
+          <p className="text-justify">People fall in love with how things make them feel.</p>
+          <p className="text-justify">
+            Toyota Innova doesn't advertise engine torque. They show three generations of a family on a road trip, grandmother in the front seat, grandchildren asleep in the back. The product is a car. The message is: <em>You can hold everyone you love, all at once.</em>
+          </p>
+          <p className="mt-3 font-bold text-white uppercase tracking-wider text-left">This is the shift you must make: from functional value to emotional value.</p>
+        </div>
+      </section>
+
+      {/* Section 3: Page 3 Content - TIGHTER SPACING */}
+      <section className="space-y-6">
+        <div className="grid grid-cols-2 gap-8 bg-white/5 p-8 rounded-[2rem] border border-white/10 text-left">
+          <div className="space-y-2">
+            <h4 className="text-red-400 font-black text-xs uppercase tracking-widest">Functional Value</h4>
+            <ul className="text-white font-medium space-y-1 text-sm md:text-base">
+              <li>24/7 customer support</li>
+              <li>Organic ingredients</li>
+              <li>Noise-cancelling</li>
+              <li>5G speed</li>
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <h4 className="text-red-400 font-black text-xs uppercase tracking-widest">Emotional Value</h4>
+            <ul className="text-white font-medium space-y-1 text-sm md:text-base">
+              <li>Someone has my back</li>
+              <li>I'm a good parent</li>
+              <li>I can breathe</li>
+              <li>I'm not falling behind</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="text-[#a1a1a1] text-lg leading-relaxed space-y-4 text-justify">
+          <p className="text-white font-bold italic text-left">Notice something: the functional value is about the product. The emotional value is about the person.</p>
+          <p>
+            This is where most taglines die. Companies are so proud of their features that they can't bear to leave them out of the tagline. "Fastest Delivery in the City." "Premium Italian Leather." "Award-Winning Coffee."
+          </p>
+          <p className="text-red-400 font-black uppercase tracking-wider text-left">These are not taglines. They are product descriptions. And product descriptions don't build brands emotions do.</p>
+        </div>
+
+        <div className="pt-6 text-[#a1a1a1] text-lg leading-relaxed text-left">
+          <h2 className="text-3xl font-black text-white font-heading">Step 3: The Intersection — Where Brand Promise Meets Human Need</h2>
+          <p className="mt-2 text-justify">
+            Once you’ve identified what people are looking for emotionally, and what your brand offers emotionally, you need to find where these two circles overlap.
+          </p>
+          <p className="font-bold text-white text-left">This is the emotional intersection.</p>
+          <p className="text-justify">Let’s look at how this worked for Airbnb.</p>
+        </div>
+      </section>
+
+      {/* Section 4: Page 4 Content */}
+      <section className="space-y-12 text-[#a1a1a1] text-lg leading-relaxed text-justify">
+        <div className="grid md:grid-cols-2 gap-12 text-left">
+          <div className="space-y-6">
+            <h4 className="text-white font-black uppercase tracking-widest text-sm">What people were looking for:</h4>
+            <ul className="space-y-3 list-disc pl-5">
+              <li>A place where they don’t feel like outsiders</li>
+              <li>Safety in unfamiliar environments</li>
+              <li>A sense of home, even while traveling</li>
+              <li>The feeling of being accepted as they are</li>
+              <li>Not just to stay — but to belong</li>
+            </ul>
+          </div>
+          <div className="space-y-6">
+            <h4 className="text-white font-black uppercase tracking-widest text-sm">What Airbnb offered:</h4>
+            <ul className="space-y-3 list-disc pl-5">
+              <li>Staying in real homes, not anonymous rooms</li>
+              <li>Hosts who welcome you personally</li>
+              <li>Living inside local neighborhoods</li>
+              <li>Human connection, not just service</li>
+              <li>A feeling of being invited in</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-red-500/10 border border-red-500/20 p-8 rounded-[2rem] text-center">
+          <p className="text-white font-black text-2xl font-heading mb-4">The emotional intersection:</p>
+          <p className="text-red-400 text-3xl font-black italic uppercase">A place where I am not a guest — I belong.</p>
+          <div className="mt-8 grid grid-cols-2 gap-4 text-sm font-bold uppercase tracking-widest text-left md:text-center">
+            <div className="text-[#a1a1a1]">Not: “Where can I stay?”</div>
+            <div className="text-white">But: “Where do I fit?”</div>
+          </div>
+        </div>
+
+        <div className="pt-12 text-left">
+          <h2 className="text-3xl font-black text-white font-heading">How to get that intersection? Follow these steps:</h2>
+          
+          <div className="mt-8 space-y-12">
+            <div className="text-left">
+              <h3 className="text-xl font-bold text-white mb-4">Step A: The Brain Dump</h3>
+              <p className="text-justify">
+                This is the only part of the process that resembles traditional brainstorming. Write down every word, phrase, and idea that comes to mind about the brand. Do not edit. Do not judge. Do not worry about length.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2 text-left">
+                {["Home", "Host", "Community", "Local", "Neighborhood", "Warm", "Welcome", "Safe", "Personal", "Not a hotel", "Feels real", "Feels human", "Not alone", "Shared space", "This is my place", "I belong here"].map(word => (
+                  <span key={word} className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs font-bold">{word}</span>
+                ))}
+              </div>
+              <p className="mt-4 italic text-left">It’s messy. That’s the point. You’re collecting raw emotional material.</p>
+            </div>
+
+            <div className="text-left">
+              <h3 className="text-xl font-bold text-white mb-4">Step B: Compression into Core Words</h3>
+              <p className="text-justify">
+                Now you compress. You look for patterns. You reduce paragraphs to sentences, sentences to phrases, phrases to words.
+              </p>
+              <div className="mt-4 bg-[#161618] p-6 rounded-2xl border border-white/5 text-left">
+                <p>“Feels like home, not a hotel” → <strong className="text-red-400">Belong</strong></p>
+                <p>“Welcome in any country or city” → <strong className="text-red-400">Anywhere</strong></p>
+              </div>
+              <p className="mt-4 font-bold text-white italic text-left">Two words. But thousands of emotional signals.</p>
+            </div>
+
+            <div className="text-left">
+              <h3 className="text-xl font-bold text-white mb-4">Step C: Combining Meaning, Not Just Words</h3>
+              <p className="text-justify">This is where most brands fail. They combine words. <strong>Great brands combine meanings.</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Page 5 Content - REFINED SPACING AND FONT SIZE */}
+      <section className="space-y-12 text-[#a1a1a1] text-lg leading-relaxed text-justify">
+        <div className="grid md:grid-cols-2 gap-8 text-left">
+           <div className="bg-white/5 p-8 rounded-3xl border border-white/10">
+              <h4 className="text-white font-black text-xl mb-6">Belong doesn’t just mean staying somewhere. It means:</h4>
+              <ul className="space-y-2 list-disc pl-5 text-sm">
+                <li>I am accepted</li>
+                <li>I am safe</li>
+                <li>I am not an outsider</li>
+                <li>I can be myself</li>
+              </ul>
+           </div>
+           <div className="bg-white/5 p-8 rounded-3xl border border-white/10">
+              <h4 className="text-white font-black text-xl mb-6">Anywhere doesn’t just mean geography. It means:</h4>
+              <ul className="space-y-2 list-disc pl-5 text-sm">
+                <li>New cultures</li>
+                <li>New cities</li>
+                <li>New lives</li>
+                <li>New identities</li>
+              </ul>
+           </div>
+        </div>
+
+        {/* REFINED HEADING SECTION */}
+        <div className="text-center py-4 md:py-6">
+          <h2 className="text-3xl md:text-5xl font-black text-white font-heading uppercase tracking-tighter mb-1">Belong Anywhere</h2>
+          <p className="text-red-400 font-bold italic text-xs md:text-sm">The literal meaning is about travel. The emotional meaning is about identity.</p>
+          <p className="text-white text-base md:text-lg font-black mt-2">Wherever you go, you are not a stranger.</p>
+        </div>
+
+        <div className="pt-12 text-left">
+          <h2 className="text-3xl font-black text-white font-heading">Step 4: The Memory Principle — Familiar Structures, Fresh Meaning</h2>
+          <p className="mt-6 text-justify">
+            There is a shortcut to memorability, but it comes with trade-offs. The human brain is pattern-seeking. When you present it with a familiar linguistic structure — a well-known phrase, a common rhythm, a cultural reference — it processes that information more easily. Cognitive effort drops. Recognition speeds up.
+          </p>
+          <p className="font-bold text-white text-left">This is called cultural anchoring.</p>
+          <div className="mt-6 space-y-4 text-left">
+            <p>A golf brand takes "Life must go on" and twists it: <strong className="text-white">"Life must golf on."</strong></p>
+            <p>A cleaning product takes "Out of sight, out of mind" and adapts it: <strong className="text-white">"Out of sight, out of germs."</strong></p>
+          </div>
+          <p className="mt-6 text-justify">The brain lights up. It recognizes the pattern, notices the deviation, and remembers it.</p>
+        </div>
+      </section>
+
+      {/* Section 6: Page 6 Content */}
+      <section className="space-y-12 text-[#a1a1a1] text-lg leading-relaxed text-justify">
+        <div className="grid md:grid-cols-2 gap-12 text-left">
+           <div className="space-y-6">
+             <h4 className="text-white font-black uppercase tracking-widest text-sm">When This Works</h4>
+             <p className="text-justify">Cultural anchoring is excellent for campaigns. It creates immediate recognition. It borrows emotional equity from existing phrases. It feels clever and shareable.</p>
+           </div>
+           <div className="space-y-6">
+             <h4 className="text-white font-black uppercase tracking-widest text-sm">When This Fails</h4>
+             <p className="text-justify">But here's the problem: <strong>borrowed phrases rarely work for long-term brand taglines.</strong> Why?:</p>
+             <ol className="list-decimal pl-5 space-y-4 text-sm text-justify">
+               <li><strong>They limit growth.</strong> If your tagline is a pun on your current category, what happens when you expand?</li>
+               <li><strong>They prioritize cleverness over substance.</strong> The best taglines don't make people think "that's clever." They make people think "that's true." Cleverness wears thin. Truth accumulates meaning.</li>
+             </ol>
+           </div>
+        </div>
+
+        <div className="pt-12 text-left">
+          <h2 className="text-3xl font-black text-white font-heading">Step 5: The Flexibility Principle — Words That Grow With You</h2>
+          <p className="mt-6 text-justify">
+            A great tagline should not be a cage. It should be a foundation. Most companies get this wrong. They write taglines that describe:
+          </p>
+          <ul className="mt-4 space-y-2 list-disc pl-8 text-left">
+            <li>a product</li>
+            <li>a category</li>
+            <li>a feature</li>
+            <li>a moment in time</li>
+          </ul>
+          <p className="mt-6 text-justify">
+            But brands grow. Products change. Markets shift. Airbnb could have said: <br/>
+            <em>“Affordable Vacation Rentals.”</em> <br/>
+            <em>“Stay in Local Homes.”</em> <br/>
+            <em>“Better Places to Sleep.”</em>
+          </p>
+          <p className="mt-6 text-justify">
+            All of these would have worked — for a few years. But Airbnb was never just about rooms. It was about how people feel when they are far from home.
+          </p>
+          <p className="mt-6 font-bold text-white text-2xl font-heading text-left">That’s why <span className="text-red-500 italic">Belong Anywhere</span> was powerful.</p>
+          <p className="text-left">It didn’t describe accommodation. It described identity.</p>
+        </div>
+      </section>
+
+      {/* Section 7: Page 7 Content */}
+      <section className="space-y-12 text-[#a1a1a1] text-lg leading-relaxed text-justify">
+        <h2 className="text-3xl font-black text-white font-heading text-left">Open Words vs. Closed Words</h2>
+        <p className="text-justify">The key to longevity is choosing words that are <strong>open</strong> rather than <strong>closed</strong>.</p>
+        
+        <div className="grid md:grid-cols-2 gap-12 text-left">
+          <div className="space-y-6 bg-red-500/5 p-8 rounded-3xl border border-red-500/10">
+            <h4 className="text-red-400 font-black uppercase tracking-widest text-xs">Closed words narrow your meaning:</h4>
+            <ul className="space-y-2 text-sm">
+              <li>• Cheap</li>
+              <li>• Fast</li>
+              <li>• Biggest</li>
+              <li>• Lowest</li>
+              <li>• First</li>
+              <li>• Only</li>
+            </ul>
+            <p className="text-xs italic text-left">These words describe specific attributes. Attributes change. Competitors copy them. Markets commoditize them.</p>
+          </div>
+          <div className="space-y-6 bg-emerald-500/5 p-8 rounded-3xl border border-emerald-500/10">
+            <h4 className="text-emerald-400 font-black uppercase tracking-widest text-xs">Open words expand your meaning:</h4>
+            <ul className="space-y-2 text-sm text-white font-bold">
+              <li>• Life</li>
+              <li>• Possible</li>
+              <li>• Better</li>
+              <li>• Move</li>
+              <li>• Together</li>
+              <li>• Everyday</li>
+              <li>• Simple</li>
+              <li>• Human</li>
+              <li>• Now</li>
+            </ul>
+            <p className="text-xs italic text-[#a1a1a1] text-left">These words don't describe what you do. They describe what you stand for and how you make them feel.</p>
+          </div>
+        </div>
+
+        <div className="pt-12 text-left">
+          <p className="text-justify">Airbnb didn’t compete on: square meters, number of rooms, or hotel stars.</p>
+          <p className="text-white font-bold text-2xl italic mt-4 text-left">They competed on: “Do I feel like I belong here?”</p>
+          <p className="mt-6 text-justify">That question works in: Paris, Tokyo, Bali, New York, a spare bedroom, a villa, or a treehouse.</p>
+          <p className="mt-6 font-black uppercase tracking-widest text-red-500 text-left">That’s what open words do they travel.</p>
+        </div>
+      </section>
+
+      {/* Section 8: Page 8 Content & Conclusion */}
+      <section className="space-y-12">
+        <div className="relative group">
+          <img 
+            src="https://i.imgur.com/pQqR1Lt.jpeg" 
+            alt="Airbnb Social Campaign" 
+            className="w-full h-auto rounded-[1rem] md:rounded-[3rem] shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]"
+          />
+          <div className="absolute inset-0 rounded-[1rem] md:rounded-[3rem] border border-white/5 pointer-events-none"></div>
+        </div>
+
+        <div className="space-y-12 py-16 bg-white/5 rounded-[4rem] p-12 border border-white/10 text-[#a1a1a1] text-lg leading-relaxed text-justify">
+          <h2 className="text-4xl font-black text-center text-white font-heading">The Final Question</h2>
+          <div className="space-y-8">
+            <p className="text-white font-bold italic text-xl text-center">Before you finalize your tagline, ask yourself this:</p>
+            <p className="text-2xl font-black text-white text-center font-heading uppercase tracking-tighter">If this company completely changed its products, would this tagline still work?</p>
+            
+            <p className="text-justify">
+              If the answer is no, you've written a product slogan, not a brand tagline.
+            </p>
+            <p className="text-justify">
+              If the answer is yes — if these words could travel with you through new categories, new markets, new decades — then you've built something that matters.
+            </p>
+            <p className="text-justify">
+              A few words, chosen with discipline, anchored in strategy, carrying emotional weight.
+            </p>
+            <div className="grid md:grid-cols-2 gap-8 pt-8 text-left">
+              <div className="space-y-4">
+                <p>That's not copywriting.</p>
+                <p className="text-white font-black text-2xl font-heading">That's brand architecture.</p>
+              </div>
+              <div className="space-y-4">
+                <p>And it's how a few words become a brand that lasts.</p>
+              </div>
+            </div>
           </div>
           <div className="pt-12 text-center">
             <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-flex items-center gap-2 px-10 py-5 border border-red-500/20 bg-red-500/10 text-red-500 rounded-full font-black text-xs uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all font-heading">
@@ -510,7 +909,7 @@ const App: React.FC = () => {
 
             <div className="hidden md:flex items-center gap-10">
               <button onClick={() => navigateTo('home')} className={`text-xs font-bold uppercase tracking-widest ${currentPage === 'home' ? 'text-white' : 'text-[#6a6a6b] hover:text-white'}`}>Home</button>
-              <button onMouseEnter={() => setIsMegaMenuOpen(true)} className={`text-xs font-bold uppercase tracking-widest flex items-center gap-2 ${currentPage === 'trends' || currentPage === 'retail-blog' ? 'text-white' : 'text-[#6a6a6b] hover:text-white'}`}>Industry Trends <ChevronDown className="w-3 h-3" /></button>
+              <button onMouseEnter={() => setIsMegaMenuOpen(true)} className={`text-xs font-bold uppercase tracking-widest flex items-center gap-2 ${currentPage === 'trends' || currentPage === 'retail-blog' || currentPage === 'hospitality-blog' ? 'text-white' : 'text-[#6a6a6b] hover:text-white'}`}>Industry Trends <ChevronDown className="w-3 h-3" /></button>
               <button onClick={() => navigateTo('contact')} className={`text-xs font-bold uppercase tracking-widest ${currentPage === 'contact' ? 'text-white' : 'text-[#6a6a6b] hover:text-white'}`}>Contact</button>
               <button onClick={() => navigateTo('contact')} className="bg-white text-black px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all font-heading">Book Demo</button>
             </div>
@@ -529,9 +928,10 @@ const App: React.FC = () => {
             <img src={LOGO_URL} alt="READLINE Logo" className="h-10 w-auto object-contain cursor-pointer" onClick={() => navigateTo('home')} />
             <button onClick={() => setIsMenuOpen(false)}><X className="w-8 h-8" /></button>
           </div>
-          <div className="flex flex-col gap-8 text-4xl font-black font-heading">
+          <div className="flex flex-col gap-8 text-4xl font-black font-heading text-left">
             <button onClick={() => navigateTo('home')}>Home</button>
             <button onClick={() => navigateTo('trends')}>Trends</button>
+            <button onClick={() => navigateTo('hospitality-blog')}>Hospitality</button>
             <button onClick={() => navigateTo('retail-blog')}>Retail & E-commerce</button>
             <button onClick={() => navigateTo('contact')}>Contact</button>
           </div>
@@ -562,7 +962,7 @@ const App: React.FC = () => {
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                   <button onClick={() => navigateTo('contact')} className="w-full sm:w-auto px-12 py-5 bg-white text-black rounded-full font-black text-xs uppercase tracking-widest hover:scale-105 transition-transform font-heading">Book Demo</button>
-                  <button onClick={() => navigateTo('retail-blog')} className="w-full sm:w-auto px-12 py-5 border border-white/10 bg-white/5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all font-heading">Case Studies</button>
+                  <button onClick={() => navigateTo('hospitality-blog')} className="w-full sm:w-auto px-12 py-5 border border-white/10 bg-white/5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all font-heading">Case Studies</button>
                 </div>
 
                 <DashboardPreview />
@@ -618,23 +1018,21 @@ const App: React.FC = () => {
                   <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${currentCaseIndex === 0 ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
                     <div className="bg-[#161618] border border-[#252527] p-10 rounded-[2.5rem] h-full relative overflow-hidden group">
                        <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity"><TrendingUp className="w-32 h-32" /></div>
-                       <h4 className="text-2xl font-bold text-white mb-4 font-heading">UGM Case Example</h4>
-                       <p className="text-sm text-[#a1a1a1] leading-relaxed mb-8">How a leading educational institution optimized their public reputation by analyzing sentiment across student communities in real-time.</p>
-                       <a 
-                        href="https://imm-studycase.vercel.app/" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                       <h4 className="text-2xl font-bold text-white mb-4 font-heading text-left">Hospitality Case Example</h4>
+                       <p className="text-sm text-[#a1a1a1] leading-relaxed mb-8 text-left">How Airbnb distilled their brand promise into a single emotional truth that guided a decade of global growth.</p>
+                       <button 
+                        onClick={() => navigateTo('hospitality-blog')}
                         className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-red-900/20 font-heading"
                        >
                          READ NOW <ArrowUpRight className="w-4 h-4" />
-                       </a>
+                       </button>
                     </div>
                   </div>
                   <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${currentCaseIndex === 1 ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
                     <div className="bg-[#161618] border border-red-500/30 p-10 rounded-[2.5rem] h-full relative overflow-hidden group">
                        <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity"><Sparkles className="w-32 h-32" /></div>
-                       <h4 className="text-2xl font-bold text-white mb-4 font-heading">WARDAH Case Example</h4>
-                       <p className="text-sm text-[#a1a1a1] leading-relaxed mb-6">Discovery our latest Wardah Brand Growth Pivot analysis. Understanding consumer movement and glow performance signals.</p>
+                       <h4 className="text-2xl font-bold text-white mb-4 font-heading text-left">WARDAH Case Example</h4>
+                       <p className="text-sm text-[#a1a1a1] leading-relaxed mb-6 text-left">Discovery our latest Wardah Brand Growth Pivot analysis. Understanding consumer movement and glow performance signals.</p>
                        <button 
                         onClick={() => navigateTo('retail-blog')}
                         className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-red-900/20 font-heading"
@@ -689,7 +1087,7 @@ const App: React.FC = () => {
                   <div key={i} className="p-10 bg-[#0c0c0e] border border-[#1b1b1d] rounded-3xl space-y-6 group hover:border-red-500/50 transition-all hover:-translate-y-2">
                     <div className="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center justify-center text-red-500">{f.icon}</div>
                     <h4 className="text-xl font-bold text-white font-heading">{f.title}</h4>
-                    <p className="text-sm text-[#6a6a6b] leading-relaxed">{f.desc}</p>
+                    <p className="text-sm text-[#6a6a6b] leading-relaxed text-justify">{f.desc}</p>
                   </div>
                 ))}
               </div>
@@ -738,7 +1136,7 @@ const App: React.FC = () => {
                     </button>
                     {activeFaq === i && (
                       <div className="pb-8 animate-in slide-in-from-top-2 duration-300">
-                        <p className="text-[#6a6a6b] leading-relaxed">{faq.a}</p>
+                        <p className="text-[#6a6a6b] leading-relaxed text-justify">{faq.a}</p>
                       </div>
                     )}
                   </div>
@@ -752,10 +1150,10 @@ const App: React.FC = () => {
               <div className="bg-gradient-to-br from-red-600 to-red-800 p-16 md:p-24 rounded-[4rem] flex flex-col lg:flex-row items-center justify-between gap-12 relative overflow-hidden text-left">
                 <div className="absolute top-0 right-0 opacity-10"><BrainCircuit className="w-96 h-96" /></div>
                 <div className="space-y-6 z-10 text-center lg:text-left">
-                  <h2 className="text-5xl md:text-6xl font-black text-white font-heading">Get Your Free <br/>Brand Analysis</h2>
-                  <p className="text-white/80 text-lg max-w-xl">Find out what people are saying about you right now with our complementary baseline report.</p>
+                  <h2 className="text-5xl md:text-6xl font-black text-white font-heading text-center lg:text-left">Get Your Free <br/>Brand Analysis</h2>
+                  <p className="text-white/80 text-lg max-w-xl text-center lg:text-left">Find out what people are saying about you right now with our complementary baseline report.</p>
                 </div>
-                <div className="z-10 w-full lg:w-auto">
+                <div className="z-10 w-full lg:w-auto text-center lg:text-left">
                   <button onClick={() => navigateTo('contact')} className="w-full lg:w-auto px-12 py-6 bg-white text-black rounded-full font-black text-xs uppercase tracking-widest hover:scale-105 transition-transform font-heading">Get My Free Analysis</button>
                 </div>
               </div>
@@ -774,15 +1172,21 @@ const App: React.FC = () => {
                   <div className="p-12 bg-[#0c0c0e] border border-red-500/30 rounded-3xl group hover:border-red-500 transition-colors cursor-pointer" onClick={() => navigateTo('retail-blog')}>
                     <TrendingUp className="w-10 h-10 text-red-500 mb-8" />
                     <h4 className="text-2xl font-bold mb-4 font-heading">Retail & E-commerce</h4>
-                    <p className="text-sm text-[#6a6a6b] mb-8">Case Study: Wardah and the Psychology of Ramadan. Understanding brand rituals.</p>
+                    <p className="text-sm text-[#6a6a6b] mb-8 text-justify">Case Study: Wardah and the Psychology of Ramadan. Understanding brand rituals.</p>
                     <button className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-400 font-heading">View Deep Dive <ChevronRight className="w-4 h-4" /></button>
                   </div>
-                  {["F&B", "Automotive", "Banking", "Beauty", "Tech"].map(cat => (
-                    <div key={cat} className="p-12 bg-[#0c0c0e] border border-[#1b1b1d] rounded-3xl group hover:border-red-500 transition-colors">
+                  <div className="p-12 bg-[#0c0c0e] border border-red-500/30 rounded-3xl group hover:border-red-500 transition-colors cursor-pointer" onClick={() => navigateTo('hospitality-blog')}>
+                    <TrendingUp className="w-10 h-10 text-red-500 mb-8" />
+                    <h4 className="text-2xl font-bold mb-4 font-heading">Hospitality</h4>
+                    <p className="text-sm text-[#6a6a6b] mb-8 text-justify">Case Study: How Airbnb Built a Lasting Tagline. Emotional brand strategy.</p>
+                    <button className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-400 font-heading">View Deep Dive <ChevronRight className="w-4 h-4" /></button>
+                  </div>
+                  {["Healthcare", "Financial Services", "Automotive", "Beauty", "Tech"].map(cat => (
+                    <div key={cat} className="p-12 bg-[#0c0c0e] border border-[#1b1b1d] rounded-3xl group hover:border-red-500 transition-colors text-left">
                       <TrendingUp className="w-10 h-10 text-red-500 mb-8" />
                       <h4 className="text-2xl font-bold mb-4 font-heading">{cat} Analysis</h4>
-                      <p className="text-sm text-[#6a6a6b] mb-8">Quarterly insights on sentiment volume and emerging trends in the {cat} sector.</p>
-                      <button className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-400 font-heading">View Trends <ChevronRight className="w-4 h-4" /></button>
+                      <p className="text-sm text-[#6a6a6b] mb-8 text-justify">Quarterly insights on sentiment volume and emerging trends in the {cat} sector.</p>
+                      <button className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-400 font-heading" onClick={() => navigateTo('trends')}>View Trends <ChevronRight className="w-4 h-4" /></button>
                     </div>
                   ))}
                </div>
@@ -791,6 +1195,8 @@ const App: React.FC = () => {
         </main>
       ) : currentPage === 'retail-blog' ? (
         <RetailBlogPage onBack={() => navigateTo('home')} />
+      ) : currentPage === 'hospitality-blog' ? (
+        <HospitalityBlogPage onBack={() => navigateTo('home')} />
       ) : (
         <main className="animate-in fade-in duration-1000">
           <section className="pt-16 pb-32 px-6">
@@ -798,13 +1204,13 @@ const App: React.FC = () => {
               <div className="space-y-12">
                 <h1 className="text-7xl font-black font-heading">Contact Us.</h1>
                 <p className="text-xl text-[#6a6a6b]">Let's discuss how READLINE can elevate your brand's data strategy.</p>
-                <div className="space-y-6 pt-12">
+                <div className="space-y-6 pt-12 text-left">
                    <a href="mailto:halo@thereadline.com" className="flex items-center gap-6 text-[#a1a1a1] hover:text-white transition-colors cursor-pointer"><Mail className="w-6 h-6 text-red-500" /> halo@thereadline.com</a>
                    <a href="https://wa.me/628992939911" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 text-[#a1a1a1] hover:text-white transition-colors cursor-pointer"><Phone className="w-6 h-6 text-red-500" /> WhatsApp Us</a>
                    <div className="flex items-center gap-6 text-[#a1a1a1] hover:text-white transition-colors cursor-pointer"><MapPin className="w-6 h-6 text-red-500" /> Menara Salemba, Jalan Salemba Raya No. 5A 10440 Jakarta Jakarta</div>
                 </div>
               </div>
-              <form className="bg-[#0c0c0e] border border-[#1b1b1d] p-12 rounded-[3rem] space-y-6">
+              <form className="bg-[#0c0c0e] border border-[#1b1b1d] p-12 rounded-[3rem] space-y-6 text-left">
                 <input type="text" placeholder="Full Name" className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-white focus:outline-none focus:border-red-500" />
                 <input type="email" placeholder="Company Email" className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-white focus:outline-none focus:border-red-500" />
                 <select className="w-full bg-[#161618] border border-[#252527] rounded-2xl p-5 text-[#a1a1a1] focus:outline-none focus:border-red-500">
@@ -821,11 +1227,11 @@ const App: React.FC = () => {
         </main>
       )}
 
-      <footer className="bg-[#070709] pt-24 pb-12 px-6 border-t border-white/5">
+      <footer className="bg-[#070709] pt-24 pb-12 px-6 border-t border-white/5 text-left">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2 space-y-8">
             <img src={LOGO_URL} alt="READLINE Logo" className="h-10 w-auto object-contain cursor-pointer" onClick={() => navigateTo('home')} />
-            <p className="text-[#6a6a6b] text-sm leading-relaxed max-w-sm">
+            <p className="text-[#6a6a6b] text-sm leading-relaxed max-w-sm text-justify">
               Based in Jakarta, The Readline helps brands capture real conversations and understand what's actually shifting sentiment.
             </p>
             <div className="flex gap-6">
